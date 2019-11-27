@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamAssign.DisplayData">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Load File" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Set Boundries" />
+                        <MenuItem mnemonicParsing="false" text="Append Data" />
+                        <MenuItem mnemonicParsing="false" text="Add Single" />
+                        <MenuItem mnemonicParsing="false" text="Delete Single " />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Tools">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Display Data" />
+                        <MenuItem mnemonicParsing="false" text="Display Graph" />
+                        <MenuItem mnemonicParsing="false" text="Display Distribution" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="User Guide" />
+                        <MenuItem mnemonicParsing="false" text="Error Log" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <top>
+                <HBox prefHeight="45.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label text="Data: ">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label text="Label">
+                            <padding>
+                                <Insets left="10.0" />
+                            </padding>
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets left="10.0" top="10.0" />
+                    </padding>
+                </HBox>
+            </top>
+            <left>
+                <HBox prefHeight="239.0" prefWidth="235.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <VBox alignment="TOP_RIGHT" prefHeight="239.0" prefWidth="279.0">
+                            <children>
+                                <Label text="Number Of entries:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label text="High:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Low:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Mean:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Median:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Mode:">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                        </VBox>
+                        <VBox alignment="TOP_RIGHT" prefHeight="239.0" prefWidth="161.0">
+                            <children>
+                                <Label text="20">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label text="84">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label text="50">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label text="69">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label text="65">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label text="69">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                        </VBox>
+                    </children>
+                    <padding>
+                        <Insets top="10.0" />
+                    </padding>
+                </HBox>
+            </left>
+            <center>
+                <AnchorPane prefHeight="355.0" prefWidth="565.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <HBox layoutX="7.0" layoutY="6.0" prefHeight="325.0" prefWidth="541.0">
+                            <children>
+                                <ListView editable="true" prefHeight="200.0" prefWidth="200.0">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="84" />
+                                            <String fx:value="83" />
+                                            <String fx:value="81" />
+                                            <String fx:value="80" />
+                                            <String fx:value="79" />
+                                        </FXCollections>
+                                    </items>
+                                </ListView>
+                                <ListView editable="true" prefHeight="200.0" prefWidth="200.0">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="75" />
+                                            <String fx:value="74" />
+                                            <String fx:value="71" />
+                                            <String fx:value="69" />
+                                            <String fx:value="69" />
+                                        </FXCollections>
+                                    </items>
+                                </ListView>
+                                <ListView editable="true" prefHeight="200.0" prefWidth="200.0">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="68" />
+                                            <String fx:value="67" />
+                                            <String fx:value="65" />
+                                            <String fx:value="62" />
+                                            <String fx:value="61" />
+                                        </FXCollections>
+                                    </items>
+                                </ListView>
+                                <ListView editable="true" prefHeight="200.0" prefWidth="200.0">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="60" />
+                                            <String fx:value="59" />
+                                            <String fx:value="58" />
+                                            <String fx:value="54" />
+                                            <String fx:value="50" />
+                                        </FXCollections>
+                                    </items>
+                                </ListView>
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            </center>
+        </BorderPane>
+    </center>
+    <bottom>
+        <VBox prefHeight="95.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="TOP_CENTER" prefHeight="43.0" prefWidth="600.0" spacing="10.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#displayGraphBtn" text="Display Graph" />
+                        <Button mnemonicParsing="false" onAction="#displayDistBtn" text="Display Distribution" />
+                        <Button mnemonicParsing="false" onAction="#appendDataBtn" text="Append Data" />
+                        <Button mnemonicParsing="false" onAction="#addSingleBtn" text="Add Entry" />
+                        <Button mnemonicParsing="false" onAction="#deleteSingleBtn" text="Delete Entry" />
+                    </children>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <padding>
+                        <Insets top="10.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="TOP_CENTER" prefHeight="84.0" prefWidth="600.0" spacing="10.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#newDataSetBtnClk" text="New Data Set">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Button>
+                        <Button mnemonicParsing="false" text="View Report">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#errorLogBtn" text="Error Log">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Button>
+                    </children>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <padding>
+                        <Insets top="10.0" />
+                    </padding>
+                </HBox>
+            </children>
+        </VBox>
+    </bottom>
+</BorderPane>
