@@ -1,7 +1,7 @@
 package teamAssign;
 
-import com.sun.deploy.uitoolkit.impl.fx.ui.FXMessageDialog;
 import javafx.collections.FXCollections;
+
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,16 +9,78 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.ComboBoxListCell;
-import javafx.scene.layout.StackPane;
+
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import javax.swing.*;
-import java.io.IOException;
-import java.util.Optional;
 
-public class DisplayData {
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class DisplayData extends NewDataSet{
+
+    @FXML   ListView table1;
+    @FXML   ListView table2;
+    @FXML   ListView table3;
+    @FXML   ListView table4;
+    @FXML   Label numOfEntries;
+    @FXML   Label high;
+    @FXML   Label low;
+    @FXML   Label mean;
+    @FXML   Label median;
+    @FXML   Label mode;
+
+    public void initialize() throws Exception {
+        fillTable();
+        fillAnalysis();
+
+    }
+
+    void fillAnalysis(){
+        numOfEntries.setText(Integer.toString(dataSet.size()));
+        high.setText(Float.toString(dataSet.get(0)));
+        low.setText(Float.toString(dataSet.get(dataSet.size() - 1)));
+    }
+
+    void fillTable(){
+        int i = dataSet.size() / 4;
+        List<Float> temp = new ArrayList<Float>();
+        int j = 0;
+        while(j <= i && j<dataSet.size()) {
+            temp.add(dataSet.get(j));
+            j++;
+        }
+        ObservableList<Float> items1 = (ObservableList<Float>) FXCollections.observableArrayList(temp);
+        table1.setItems(items1);
+        temp.clear();
+
+        while(j < (i*2) && (j)<dataSet.size()) {
+            temp.add(dataSet.get(j));
+            j++;
+        }
+        ObservableList<Float> items2 = (ObservableList<Float>) FXCollections.observableArrayList(temp);
+        table2.setItems(items2);
+        temp.clear();
+
+
+        while(j < (i*3) && (j)<dataSet.size()) {
+            temp.add(dataSet.get(j));
+            j++;
+        }
+        ObservableList<Float> items3 = (ObservableList<Float>) FXCollections.observableArrayList(temp);
+        table3.setItems(items3);
+        temp.clear();
+
+        while(j < (i*4) && (j)<dataSet.size() - 1) {
+            temp.add(dataSet.get(j));
+            j++;
+        }
+        ObservableList<Float> items4 = (ObservableList<Float>) FXCollections.observableArrayList(temp);
+        table4.setItems(items4);
+        temp.clear();
+    }
 
     @FXML
     MenuBar myMenuBar;
@@ -169,7 +231,6 @@ public class DisplayData {
     public void addSingleBtn(javafx.event.ActionEvent actionEvent) throws  IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddSingle.fxml"));
         Parent parent = fxmlLoader.load();
-
         Scene scene = new Scene(parent);
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);

@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamAssign.DisplayData">
+<BorderPane fx:id="displayDataID" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamAssign.DisplayData">
     <top>
         <MenuBar fx:id="myMenuBar" BorderPane.alignment="CENTER">
             <menus>
@@ -119,32 +119,32 @@
                         </VBox>
                         <VBox alignment="TOP_RIGHT" prefHeight="239.0" prefWidth="161.0">
                             <children>
-                                <Label text="20">
+                                <Label fx:id="numOfEntries" text="">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Label>
-                                <Label text="84">
+                                <Label fx:id="high" text="">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Label>
-                                <Label text="50">
+                                <Label fx:id="low" text="">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Label>
-                                <Label text="69">
+                                <Label fx:id="mean" text="">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Label>
-                                <Label text="65">
+                                <Label fx:id="median" text="">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
                                 </Label>
-                                <Label text="69">
+                                <Label fx:id="mode" text="">
                                     <font>
                                         <Font size="18.0" />
                                     </font>
@@ -168,49 +168,13 @@
                     <children>
                         <HBox layoutX="7.0" layoutY="6.0" prefHeight="325.0" prefWidth="541.0">
                             <children>
-                                <ListView editable="true" prefHeight="200.0" prefWidth="200.0">
-                                    <items>
-                                        <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="84" />
-                                            <String fx:value="83" />
-                                            <String fx:value="81" />
-                                            <String fx:value="80" />
-                                            <String fx:value="79" />
-                                        </FXCollections>
-                                    </items>
+                                <ListView fx:id="table1" editable="true" prefHeight="200.0" prefWidth="200.0">
                                 </ListView>
-                                <ListView editable="true" prefHeight="200.0" prefWidth="200.0">
-                                    <items>
-                                        <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="75" />
-                                            <String fx:value="74" />
-                                            <String fx:value="71" />
-                                            <String fx:value="69" />
-                                            <String fx:value="69" />
-                                        </FXCollections>
-                                    </items>
+                                <ListView fx:id="table2" editable="true" prefHeight="200.0" prefWidth="200.0">
                                 </ListView>
-                                <ListView editable="true" prefHeight="200.0" prefWidth="200.0">
-                                    <items>
-                                        <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="68" />
-                                            <String fx:value="67" />
-                                            <String fx:value="65" />
-                                            <String fx:value="62" />
-                                            <String fx:value="61" />
-                                        </FXCollections>
-                                    </items>
+                                <ListView fx:id="table3" editable="true" prefHeight="200.0" prefWidth="200.0">
                                 </ListView>
-                                <ListView editable="true" prefHeight="200.0" prefWidth="200.0">
-                                    <items>
-                                        <FXCollections fx:factory="observableArrayList">
-                                            <String fx:value="60" />
-                                            <String fx:value="59" />
-                                            <String fx:value="58" />
-                                            <String fx:value="54" />
-                                            <String fx:value="50" />
-                                        </FXCollections>
-                                    </items>
+                                <ListView fx:id="table4" editable="true" prefHeight="200.0" prefWidth="200.0">
                                 </ListView>
                             </children>
                         </HBox>

@@ -8,10 +8,15 @@ import javafx.scene.Scene;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.*;
 
-public class NewDataSet {
+import teamAssign.DisplayData;
+
+public class NewDataSet extends Main{
 
 
     public void btnCancelClk(javafx.event.ActionEvent actionEvent) throws IOException {
@@ -30,6 +35,7 @@ public class NewDataSet {
     public void btnCreateClk(javafx.event.ActionEvent actionEvent) throws IOException {
         Parent newDataSetParent = FXMLLoader.load(getClass().getResource("DisplayData.fxml"));
         Scene newDataSetScene = new Scene(newDataSetParent);
+
 
         // This line gets the stage information
         Stage window  = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
@@ -52,8 +58,19 @@ public class NewDataSet {
     }
 
     // todo: What happens to file goes here
-    private void openFile(File file) {
-
+    private void openFile(File file) throws FileNotFoundException {
+        Scanner data = new Scanner(file);
+        String [] temp = new String[0];
+        int i = 0;
+        while(data.hasNextLine()) {
+              temp = data.nextLine().split(",");
+            for(int j = 0; j < temp.length; j++){
+                dataSet.add(Float.parseFloat(temp[j]));
+                System.out.println(dataSet.get(i));
+                i++;
+            }
+        }
+        Collections.sort(dataSet, Collections.reverseOrder());
     }
 
 }

@@ -116,6 +116,7 @@ public class ErrorLog {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    @FXML
     public void newDataSetBtnClk(javafx.event.ActionEvent actionEvent) throws IOException {
         Parent newDataSetParent = FXMLLoader.load(getClass().getResource("NewDataSet.fxml"));
         Scene newDataSetScene = new Scene(newDataSetParent);
