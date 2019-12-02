@@ -1,4 +1,6 @@
 package teamAssign;
 
-public class DeleteSingle {
+public class DeleteSingle
+{
+
 }
