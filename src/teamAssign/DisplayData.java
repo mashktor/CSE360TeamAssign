@@ -38,12 +38,14 @@ public class DisplayData extends NewDataSet{
 
     }
 
+    // Todo: implement mean, median, mode
     void fillAnalysis(){
         numOfEntries.setText(Integer.toString(dataSet.size()));
         high.setText(Float.toString(dataSet.get(0)));
         low.setText(Float.toString(dataSet.get(dataSet.size() - 1)));
     }
 
+    // Todo: Algorithm is still not working
     void fillTable(){
         int i = dataSet.size() / 4;
         List<Float> temp = new ArrayList<Float>();
