@@ -168,6 +168,8 @@ public class DisplayData extends NewDataSet{
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.showAndWait();
+
+
     };
 
     @FXML
@@ -236,6 +238,14 @@ public class DisplayData extends NewDataSet{
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.showAndWait();
+
+        //this next block of code refreshes the "DisplayData" window after "enter" is clicked in AddSingle
+        Parent newDataSetParent = FXMLLoader.load(getClass().getResource("DisplayData.fxml"));
+        Scene newDataSetScene = new Scene(newDataSetParent);
+        // This line gets the stage information
+        Stage window  = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        window.setScene(newDataSetScene);
+        window.show();
     }
 
     public void deleteSingleBtn(javafx.event.ActionEvent actionEvent) throws  IOException {
