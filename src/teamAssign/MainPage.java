@@ -100,6 +100,7 @@ public class MainPage {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.showAndWait();
+
     };
 
     @FXML
