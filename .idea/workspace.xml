@@ -5,7 +5,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayData.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/MainPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/MainPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/DisplayData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/DisplayData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/MainPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/NewDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/NewDataSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamAssign/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamAssign/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/MainPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamAssign/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamAssign/NewDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/NewDataSet.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

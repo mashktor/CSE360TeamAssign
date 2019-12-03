@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -13,9 +14,30 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 
-public class MainPage {
-    @FXML
-    MenuBar myMenuBar;
+public class MainPage extends Main{
+
+    @FXML MenuBar myMenuBar;
+    @FXML MenuItem displayData;
+    @FXML MenuItem displayGraph;
+    @FXML MenuItem displayDist;
+    @FXML MenuItem appendData;
+    @FXML MenuItem addSingle;
+    @FXML MenuItem deleteSingle;
+    @FXML MenuItem userGuide;
+    @FXML MenuItem errorLog;
+
+    public void initialize() throws Exception {
+        if(success == false){
+            displayData.setDisable(true);
+            displayGraph.setDisable(true);
+            displayDist.setDisable(true);
+            appendData.setDisable(true);
+            addSingle.setDisable(true);
+            deleteSingle.setDisable(true);
+        }
+
+    }
+
 
     @FXML
     protected void errorLogMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {

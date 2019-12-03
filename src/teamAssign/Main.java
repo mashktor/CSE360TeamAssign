@@ -13,6 +13,7 @@ import java.util.List;
 public class Main extends Application {
 
     public static List<Float> dataSet = new ArrayList<Float>();
+    public static boolean success = false;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
