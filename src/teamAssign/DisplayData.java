@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import teamAssign.NewDataSet;
 
 
 public class DisplayData extends NewDataSet{
@@ -32,11 +33,13 @@ public class DisplayData extends NewDataSet{
     @FXML   Label mean;
     @FXML   Label median;
     @FXML   Label mode;
+    public Label realName;
 
     public void initialize() throws Exception {
         fillTable();
         fillAnalysis();
-
+        realName.setText(id);
+        
     }
 
     // Todo: implement mean, median, mode

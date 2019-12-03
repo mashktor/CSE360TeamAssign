@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.scene.control.*;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -17,6 +18,11 @@ import java.util.*;
 import teamAssign.DisplayData;
 
 public class NewDataSet extends Main{
+	
+	public TextField topBound;
+	public TextField lowBound;
+	public TextField name;
+	public static String id = "";
 
 
     public void btnCancelClk(javafx.event.ActionEvent actionEvent) throws IOException {
@@ -59,15 +65,20 @@ public class NewDataSet extends Main{
 
     // todo: What happens to file goes here
     private void openFile(File file) throws FileNotFoundException {
+    	id = name.getText();
+    	int max = Integer.parseInt(topBound.getText());
+    	int min = Integer.parseInt(lowBound.getText());
         Scanner data = new Scanner(file);
         String [] temp = new String[0];
         int i = 0;
         while(data.hasNextLine()) {
               temp = data.nextLine().split(",");
             for(int j = 0; j < temp.length; j++){
-                dataSet.add(Float.parseFloat(temp[j]));
-                System.out.println(dataSet.get(i));
-                i++;
+            	if(Integer.parseInt(temp[j]) >= min && Integer.parseInt(temp[j]) <= max){
+            		dataSet.add(Float.parseFloat(temp[j]));
+            		System.out.println(dataSet.get(i));
+            		i++;
+            	}
             }
         }
         Collections.sort(dataSet, Collections.reverseOrder());
