@@ -42,7 +42,7 @@ public class DisplayData extends NewDataSet{
         
     }
 
-    // Todo: implement mean, median, mode
+
     int fillAnalysis(){
         int sizeDataSet = dataSet.size();
 
