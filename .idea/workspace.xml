@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d898f9ec-141f-428c-8730-ea97917d41a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/DisplayData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/DisplayData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/MainPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/MainPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/MainPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamAssign/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/MainPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamAssign/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamAssign/files/UserDocument .pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/files/UserDocument.pdf" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,9 +38,14 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/teamAssign" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\miras\OneDrive\school\ASU\CSE360\projects\TeamAssign\src\teamAssign" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">

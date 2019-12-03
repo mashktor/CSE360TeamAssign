@@ -1,5 +1,6 @@
 package teamAssign;
 
+import javafx.application.HostServices;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -7,11 +8,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 
 
 public class MainPage extends Main{
@@ -135,6 +141,17 @@ public class MainPage extends Main{
         stage.setScene(scene);
         stage.showAndWait();
     };
+
+    @FXML
+    protected void userGuide(javafx.event.ActionEvent actionEvent) throws IOException, URISyntaxException {
+
+        // Gets the users path to file.
+        String path = System.getProperty("user.dir")+"\\src\\teamAssign\\files\\UserDocument.pdf";
+        HostServices hs =  getHostServices();
+        hs.showDocument(path);
+
+    }
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
     public void newDataSetBtnClk(javafx.event.ActionEvent actionEvent) throws IOException {
