@@ -43,8 +43,13 @@ public class DisplayData extends NewDataSet{
     }
 
     // Todo: implement mean, median, mode
-    void fillAnalysis(){
+    int fillAnalysis(){
         int sizeDataSet = dataSet.size();
+
+        if(sizeDataSet == 0){
+            return 0;
+        }
+
         numOfEntries.setText(Integer.toString(sizeDataSet));
         high.setText(Float.toString(dataSet.get(0)));
         low.setText(Float.toString(dataSet.get(sizeDataSet - 1)));
@@ -68,6 +73,7 @@ public class DisplayData extends NewDataSet{
         median.setText(Float.toString(dataMedian));
 
         mode.setText(Float.toString(mode()));
+        return 1;
     }
 
     private float mode(){

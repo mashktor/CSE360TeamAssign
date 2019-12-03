@@ -80,15 +80,15 @@ public class NewDataSet extends Main{
     private boolean openFile(File file) throws FileNotFoundException {
     	id = name.getText();
 
-    	// Default value = 100
-    	float max = 100;
-    	if(topBound.getText() != null) {
+    	// Default value = 100,  if text field is not empty apply new value
+    	float max = 100.0f;
+    	if(!topBound.getText().isEmpty()) {
             max = Float.parseFloat(topBound.getText());
         }
-    	//Default value = 0
-    	float min = 0;
-        if(lowBound.getText() != null) {
-            max = Float.parseFloat(lowBound.getText());
+    	//Default value = 0,  if text field is not empty apply new value
+    	float min = 0.0f;
+        if(!lowBound.getText().isEmpty()) {
+            min = Float.parseFloat(lowBound.getText());
         }
 
         Scanner data = new Scanner(file);
@@ -97,7 +97,7 @@ public class NewDataSet extends Main{
         while(data.hasNextLine()) {
               temp = data.nextLine().split(",");
             for(int j = 0; j < temp.length; j++){
-            	if(!(Float.parseFloat(temp[j]) >= min) && !(Float.parseFloat(temp[j]) <= max)){
+            	if(!(Float.parseFloat(temp[j]) >= min) || !(Float.parseFloat(temp[j]) <= max)){
                     //Send error to error list and cancel import
                     dataSet.clear();
                     return success;

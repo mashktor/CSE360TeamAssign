@@ -35,7 +35,6 @@ public class MainPage extends Main{
             addSingle.setDisable(true);
             deleteSingle.setDisable(true);
         }
-
     }
 
 
