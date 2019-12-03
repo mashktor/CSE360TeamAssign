@@ -270,5 +270,13 @@ public class DisplayData extends NewDataSet{
         stage.setScene(scene);
         stage.showAndWait();
 
+        //this next block of code refreshes the "DisplayData" window after data has been appended to it
+        Parent newDataSetParent = FXMLLoader.load(getClass().getResource("DisplayData.fxml"));
+        Scene newDataSetScene = new Scene(newDataSetParent);
+        // This line gets the stage information
+        Stage window  = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        window.setScene(newDataSetScene);
+        window.show();
+
     }
 }
