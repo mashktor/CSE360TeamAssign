@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d898f9ec-141f-428c-8730-ea97917d41a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamAssign/AppendData.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/AppendData.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/teamAssign/AppendData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/AppendData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/DeleteSingle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/DeleteSingle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamAssign/DisplayData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/DisplayData.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,6 +104,15 @@
     </option>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/teamAssign/AppendData.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="dataSet" language="JAVA" />

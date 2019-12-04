@@ -43,6 +43,7 @@ public class AppendData
         stage.show();
         stage.close();
 
+        Collections.sort(dataSet, Collections.reverseOrder());
         //"closes" the window after file is chosen
         browse.getScene().getWindow().hide();
 
@@ -57,7 +58,7 @@ public class AppendData
     private void openFile(File file) throws Exception
     {
         Scanner data = new Scanner(file);
-        String [] temp = new String[0];
+        String [] temp;
         int i = 0;
         while(data.hasNextLine()) {
             temp = data.nextLine().split(",");
@@ -79,5 +80,6 @@ public class AppendData
         //closes out the window when cancel button is hit
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
+
     }
 }

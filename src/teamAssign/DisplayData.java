@@ -211,7 +211,7 @@ public class DisplayData extends NewDataSet{
     };
 
     @FXML
-    public void deleteSingleMenuBtn(javafx.event.ActionEvent actionEvent) throws  IOException {
+    public void deleteSingleMenuBtn(javafx.event.ActionEvent actionEvent) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DeleteSingle.fxml"));
         Parent parent = fxmlLoader.load();
 
@@ -220,7 +220,6 @@ public class DisplayData extends NewDataSet{
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.showAndWait();
-
     }
 
     @FXML
@@ -323,6 +322,14 @@ public class DisplayData extends NewDataSet{
         stage.setScene(scene);
         stage.showAndWait();
 
+        //this next block of code refreshes the "DisplayData" window after "enter" is clicked in AddSingle
+        Parent newDataSetParent = FXMLLoader.load(getClass().getResource("DisplayData.fxml"));
+        Scene newDataSetScene = new Scene(newDataSetParent);
+        // This line gets the stage information
+        Stage window  = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        window.setScene(newDataSetScene);
+        window.show();
+
     }
 
     public void appendDataBtn(javafx.event.ActionEvent actionEvent) throws  IOException {
@@ -334,6 +341,14 @@ public class DisplayData extends NewDataSet{
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.showAndWait();
+
+        //this next block of code refreshes the "DisplayData" window after "enter" is clicked in AddSingle
+        Parent newDataSetParent = FXMLLoader.load(getClass().getResource("DisplayData.fxml"));
+        Scene newDataSetScene = new Scene(newDataSetParent);
+        // This line gets the stage information
+        Stage window  = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        window.setScene(newDataSetScene);
+        window.show();
 
     }
 }
