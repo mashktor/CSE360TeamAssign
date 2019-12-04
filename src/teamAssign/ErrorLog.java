@@ -45,7 +45,8 @@ public class ErrorLog extends Main{
     
     //Initializes error text area
     public void initErrorArea() throws IOException{
-    	Scanner scn = new Scanner(new File("errorMsg.txt"));
+        String path = System.getProperty("user.dir")+"\\src\\teamAssign\\files\\errorMsg.txt";
+    	Scanner scn = new Scanner(new File(path));
     		while(scn.hasNextLine()) {
     			errorArea.appendText(scn.nextLine() + "\n");
     		}
@@ -57,9 +58,9 @@ public class ErrorLog extends Main{
     
     //addError method to create new error cases
     public static void addError(String errorMsg) throws IOException {
-    	
+        String path = System.getProperty("user.dir")+"\\src\\teamAssign\\files\\errorMsg.txt";
     	//update errorMsg text file
-    	BufferedWriter writer = new BufferedWriter(new FileWriter("errorMsg.txt", true));
+    	BufferedWriter writer = new BufferedWriter(new FileWriter(path, true));
     	writer.append(java.time.LocalDateTime.now().toString());
     	writer.append(" - " + errorMsg + "\n");
     	writer.close();

@@ -21,7 +21,7 @@ import static teamAssign.NewDataSet.max;
 import static teamAssign.NewDataSet.min;
 
 import static teamAssign.Main.dataSet;
-import teamAssign.ErrorLog;
+import static teamAssign.ErrorLog.addError;
 public class AddSingle
 {
     @FXML TextField gradeEntry;

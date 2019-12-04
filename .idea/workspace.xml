@@ -3,13 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="d898f9ec-141f-428c-8730-ea97917d41a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/errorMsg.txt" beforeDir="false" afterPath="$PROJECT_DIR$/errorMsg.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/AddSingle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/AddSingle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/NewDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/NewDataSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/AddSingle.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/AddSingle.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/ErrorLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/ErrorLog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/ErrorLog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/ErrorLog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/files/errorMsg.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/files/errorMsg.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/teamAssign/AddSingle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/AddSingle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/DisplayData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/DisplayData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/NewDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/NewDataSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamAssign/ErrorLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/ErrorLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamAssign/files/errorMsg.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/files/errorMsg.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

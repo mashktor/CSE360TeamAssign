@@ -1,1 +1,8 @@
-error example
+error example2019-12-04T04:59:32.797 - Value Entered is out of bounds.  :  Enter a value within the given bounds.
+2019-12-04T04:59:37.193 - Value Entered is out of bounds.  :  Enter a value within the given bounds.
+2019-12-04T04:59:37.795 - Value Entered is out of bounds.  :  Enter a value within the given bounds.
+2019-12-04T04:59:37.895 - Value Entered is out of bounds.  :  Enter a value within the given bounds.
+2019-12-04T05:00:41.264 - Did not enter numerical value for new grade.  :  Try entering a numerical value.
+2019-12-04T05:00:42.957 - Value Entered is out of bounds.  :  Enter a value within the given bounds.
+2019-12-04T05:00:46.691 - Did not enter numerical value for new grade.  :  Try entering a numerical value.
+2019-12-04T05:00:48.473 - Value Entered is out of bounds.  :  Enter a value within the given bounds.
