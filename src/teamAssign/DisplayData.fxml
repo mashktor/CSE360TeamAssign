@@ -60,7 +60,7 @@
                                 <Font name="System Bold" size="18.0" />
                             </font>
                         </Label>
-                        <Label text="Label">
+                        <Label text="Label" fx:id = "realName">
                             <padding>
                                 <Insets left="10.0" />
                             </padding>

@@ -15,8 +15,10 @@ import javafx.stage.Stage;
 
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import teamAssign.NewDataSet;
 
 
 public class DisplayData extends NewDataSet{
@@ -31,24 +33,81 @@ public class DisplayData extends NewDataSet{
     @FXML   Label mean;
     @FXML   Label median;
     @FXML   Label mode;
+    public Label realName;
 
     public void initialize() throws Exception {
         fillTable();
         fillAnalysis();
-
+        realName.setText(id);
+        
     }
 
-    void fillAnalysis(){
-        numOfEntries.setText(Integer.toString(dataSet.size()));
+
+    int fillAnalysis(){
+        int sizeDataSet = dataSet.size();
+
+        if(sizeDataSet == 0){
+            return 0;
+        }
+
+        numOfEntries.setText(Integer.toString(sizeDataSet));
         high.setText(Float.toString(dataSet.get(0)));
-        low.setText(Float.toString(dataSet.get(dataSet.size() - 1)));
+        low.setText(Float.toString(dataSet.get(sizeDataSet - 1)));
+
+        double sum = 0;
+        for(int index = 0; index < sizeDataSet; index++){
+            sum += dataSet.get(index);
+        }
+        DecimalFormat df = new DecimalFormat("###0.0");
+        mean.setText(df.format(sum / sizeDataSet));
+
+        float dataMedian = 0;
+        if(sizeDataSet % 2 == 0){
+            dataMedian = (dataSet.get(sizeDataSet / 2 - 1) +
+                         dataSet.get(sizeDataSet / 2))
+                         / 2;
+        }
+        else{
+            dataMedian = dataSet.get((sizeDataSet/2));
+        }
+        median.setText(Float.toString(dataMedian));
+
+        mode.setText(Float.toString(mode()));
+        return 1;
     }
+
+    private float mode(){
+        float dataMode = 0;
+        int maxCount = 0;
+        int i, j;
+        int sizeDataSet = dataSet.size();
+
+        for (i = 0; i < sizeDataSet; ++i) {
+            int count = 0;
+            for (j = 0; j < sizeDataSet; ++j) {
+                if (dataSet.get(j).equals(dataSet.get(i)))
+                    ++count;
+            }
+
+            if (count > maxCount) {
+                maxCount = count;
+                dataMode = dataSet.get(i);
+            }
+        }
+
+        return dataMode;
+    }
+
 
     void fillTable(){
-        int i = dataSet.size() / 4;
+        int sizeDataSet = dataSet.size();
+        int i = (sizeDataSet / 4);
+        if(sizeDataSet % 4 > 0 ){
+            i++;
+        }
         List<Float> temp = new ArrayList<Float>();
         int j = 0;
-        while(j <= i && j<dataSet.size()) {
+        for(int k = 0; k < i; k++){
             temp.add(dataSet.get(j));
             j++;
         }
@@ -56,7 +115,10 @@ public class DisplayData extends NewDataSet{
         table1.setItems(items1);
         temp.clear();
 
-        while(j < (i*2) && (j)<dataSet.size()) {
+        if(sizeDataSet % 4 == 1 ){
+            i--;
+        }
+        for(int k = 0; k < i; k++) {
             temp.add(dataSet.get(j));
             j++;
         }
@@ -64,8 +126,10 @@ public class DisplayData extends NewDataSet{
         table2.setItems(items2);
         temp.clear();
 
-
-        while(j < (i*3) && (j)<dataSet.size()) {
+        if(sizeDataSet % 4 == 2 ){
+            i--;
+        }
+        for(int k = 0; k < i; k++) {
             temp.add(dataSet.get(j));
             j++;
         }
@@ -73,13 +137,14 @@ public class DisplayData extends NewDataSet{
         table3.setItems(items3);
         temp.clear();
 
-        while(j < (i*4) && (j)<dataSet.size() - 1) {
+        while(j < sizeDataSet) {
             temp.add(dataSet.get(j));
             j++;
         }
         ObservableList<Float> items4 = (ObservableList<Float>) FXCollections.observableArrayList(temp);
         table4.setItems(items4);
         temp.clear();
+
     }
 
     @FXML
@@ -269,14 +334,6 @@ public class DisplayData extends NewDataSet{
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.showAndWait();
-
-        //this next block of code refreshes the "DisplayData" window after data has been appended to it
-        Parent newDataSetParent = FXMLLoader.load(getClass().getResource("DisplayData.fxml"));
-        Scene newDataSetScene = new Scene(newDataSetParent);
-        // This line gets the stage information
-        Stage window  = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
-        window.setScene(newDataSetScene);
-        window.show();
 
     }
 }
