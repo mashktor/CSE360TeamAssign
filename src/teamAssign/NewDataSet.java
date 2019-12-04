@@ -32,6 +32,7 @@ public class NewDataSet {
     @FXML public TextField name;
 	@FXML public static String id = "";
 	@FXML Label errNoName;
+	public static float max, min;
 
     public void initialize() throws Exception {
         dataSet.clear();
@@ -167,12 +168,12 @@ public class NewDataSet {
     	id = name.getText();
 
     	// Default value = 100,  if text field is not empty apply new value
-    	float max = 100.0f;
+    	max = 100.0f;
     	if(!topBound.getText().isEmpty()) {
             max = Float.parseFloat(topBound.getText());
         }
     	//Default value = 0,  if text field is not empty apply new value
-    	float min = 0.0f;
+    	min = 0.0f;
         if(!lowBound.getText().isEmpty()) {
             min = Float.parseFloat(lowBound.getText());
         }

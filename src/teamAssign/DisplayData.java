@@ -18,6 +18,8 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 import teamAssign.NewDataSet;
 
 import static teamAssign.Main.dataSet;
@@ -254,14 +256,29 @@ public class DisplayData {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void newDataSetBtnClk(javafx.event.ActionEvent actionEvent) throws IOException {
-        Parent newDataSetParent = FXMLLoader.load(getClass().getResource("NewDataSet.fxml"));
-        Scene newDataSetScene = new Scene(newDataSetParent);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Warning!");
+        alert.setHeaderText("If you continue, current data set will be " +
+                "deleted and a new data set needs to be created");
+        alert.setContentText("Are you ok with this?");
 
-        // This line gets the stage information
-        Stage window  = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            Parent newDataSetParent = FXMLLoader.load(getClass().getResource("NewDataSet.fxml"));
+            Scene newDataSetScene = new Scene(newDataSetParent);
+            // Sets success = true because we have created a dataset, it might be empty.
+            success = true;
 
-        window.setScene(newDataSetScene);
-        window.show();
+            // This line gets the stage information
+            Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+
+            window.setScene(newDataSetScene);
+            window.show();
+
+        } else {
+            // ... user chose CANCEL or closed the dialog
+        }
+
     }
 
     public void displayGraphBtn(javafx.event.ActionEvent actionEvent) throws IOException {
