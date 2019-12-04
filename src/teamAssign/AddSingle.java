@@ -21,7 +21,7 @@ import static teamAssign.NewDataSet.max;
 import static teamAssign.NewDataSet.min;
 
 import static teamAssign.Main.dataSet;
-
+import teamAssign.ErrorLog;
 public class AddSingle
 {
     @FXML TextField gradeEntry;
@@ -56,9 +56,11 @@ public class AddSingle
         }
         catch (NumberFormatException e) {
             //Not an integer
+        	ErrorLog.addError("Did not enter numerical value for new grade.  :  Try entering a numerical value.");
             entryNotValid.setText("Not a valid Entry");
         }
         catch(Exception e){
+        	ErrorLog.addError("Value Entered is out of bounds.  :  Enter a value within the given bounds.");
             entryNotValid.setText("Entry out of bounds");
         }
 

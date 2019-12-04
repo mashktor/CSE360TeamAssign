@@ -9,10 +9,15 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.scene.control.TextArea;
 
-import java.io.IOException;
+import java.io.*;
+import java.util.*;
+import java.text.*;
 
 public class ErrorLog extends Main{
+	
+	
 
     @FXML
     MenuBar myMenuBar;
@@ -23,8 +28,10 @@ public class ErrorLog extends Main{
     @FXML MenuItem appendData;
     @FXML MenuItem addSingle;
     @FXML MenuItem deleteSingle;
+    @FXML TextArea errorArea;
     @FXML
     public void initialize() throws Exception {
+    	initErrorArea();
         if(success == false){
             displayData.setDisable(true);
             displayGraph.setDisable(true);
@@ -33,6 +40,31 @@ public class ErrorLog extends Main{
             addSingle.setDisable(true);
             deleteSingle.setDisable(true);
         }
+    }
+    
+    
+    //Initializes error text area
+    public void initErrorArea() throws IOException{
+    	Scanner scn = new Scanner(new File("errorMsg.txt"));
+    		while(scn.hasNextLine()) {
+    			errorArea.appendText(scn.nextLine() + "\n");
+    		}
+    		scn.close();
+    	
+    	
+    }
+    
+    
+    //addError method to create new error cases
+    public static void addError(String errorMsg) throws IOException {
+    	
+    	//update errorMsg text file
+    	BufferedWriter writer = new BufferedWriter(new FileWriter("errorMsg.txt", true));
+    	writer.append(java.time.LocalDateTime.now().toString());
+    	writer.append(" - " + errorMsg + "\n");
+    	writer.close();
+    	
+    	
     }
 
     @FXML
