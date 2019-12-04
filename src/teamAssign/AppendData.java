@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Collections;
+import java.util.Scanner;
 
 import javafx.stage.Stage;
 
@@ -55,20 +56,24 @@ public class AppendData
      */
     private void openFile(File file) throws Exception
     {
-        //puts the file into a buffer
-        BufferedReader buffer = new BufferedReader(new FileReader(file));
-
-        String input = "";
-        //reads each line until the file is empty
-        while((input = buffer.readLine()) != null)
-        {
-            //adds each line into the "dataSet" ArrayList
-            dataSet.add(Float.parseFloat(input));
-            //resorts the ArrayList with the new inputs
-            Collections.sort(dataSet, Collections.reverseOrder());
+        Scanner data = new Scanner(file);
+        String [] temp = new String[0];
+        int i = 0;
+        while(data.hasNextLine()) {
+            temp = data.nextLine().split(",");
+            for(int j = 0; j < temp.length; j++){
+                dataSet.add(Float.parseFloat(temp[j]));
+                System.out.println(dataSet.get(i));
+                i++;
+            }
         }
     }
 
+    /**
+     * @param event
+     * @throws IOException
+     * This method closes the window when the cancel button is clicked
+     */
     public void cancelButton(ActionEvent event) throws IOException
     {
         //closes out the window when cancel button is hit
