@@ -1,5 +1,6 @@
 package teamAssign;
 
+import javafx.application.HostServices;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -10,8 +11,11 @@ import javafx.scene.control.MenuItem;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-
 import java.io.IOException;
+
+
+
+
 
 
 public class MainPage extends Main{
@@ -26,7 +30,10 @@ public class MainPage extends Main{
     @FXML MenuItem userGuide;
     @FXML MenuItem errorLog;
 
-    public void initialize() throws Exception {
+    /**
+     * Initializes the first scene by disabling the menuitems when there is no dataset
+     */
+    public void initialize() {
         if(success == false){
             displayData.setDisable(true);
             displayGraph.setDisable(true);
@@ -38,6 +45,11 @@ public class MainPage extends Main{
     }
 
 
+    /**
+     * Opens error log from the menubar
+     * @param actionEvent
+     * @throws IOException
+     */
     @FXML
     protected void errorLogMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("ErrorLog.fxml"));
@@ -50,6 +62,11 @@ public class MainPage extends Main{
         window.show();
     };
 
+    /**
+     * Displays Graph from the menubar
+     * @param actionEvent
+     * @throws IOException
+     */
     @FXML
     protected void displayGraphMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("DisplayGraph.fxml"));
@@ -62,6 +79,11 @@ public class MainPage extends Main{
         window.show();
     };
 
+    /**
+     * Displays Distribution from the menubar
+     * @param actionEvent
+     * @throws IOException
+     */
     @FXML
     protected void displayDistMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("DisplayDist.fxml"));
@@ -74,6 +96,11 @@ public class MainPage extends Main{
         window.show();
     };
 
+    /**
+     * Displays Data from the menubar
+     * @param actionEvent
+     * @throws IOException
+     */
     @FXML
     protected void displayDataMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("DisplayData.fxml"));
@@ -86,6 +113,11 @@ public class MainPage extends Main{
         window.show();
     };
 
+    /**
+     * Displays create a new dataset from the menubar
+     * @param actionEvent
+     * @throws IOException
+     */
     @FXML
     protected void onLoadFileMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
         Parent newDataSetParent = FXMLLoader.load(getClass().getResource("NewDataSet.fxml"));
@@ -98,6 +130,11 @@ public class MainPage extends Main{
         window.show();
     };
 
+    /**
+     * opens window to delete single entry from the menubar
+     * @param actionEvent
+     * @throws IOException
+     */
     @FXML
     public void deleteSingleMenuBtn(javafx.event.ActionEvent actionEvent) throws  IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DeleteSingle.fxml"));
@@ -111,6 +148,11 @@ public class MainPage extends Main{
 
     }
 
+    /**
+     * opens window to add single entry from the menubar
+     * @param actionEvent
+     * @throws IOException
+     */
     @FXML
     protected void AddSingleMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddSingle.fxml"));
@@ -124,6 +166,11 @@ public class MainPage extends Main{
 
     };
 
+    /**
+     * opens window to append single entry from the menubar
+     * @param actionEvent
+     * @throws IOException
+     */
     @FXML
     protected void OnSetAppendDataMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AppendData.fxml"));
@@ -136,7 +183,28 @@ public class MainPage extends Main{
         stage.showAndWait();
     };
 
+    /**
+     * Opens our user manual from the menubar
+     * @param actionEvent
+     */
+    @FXML
+    protected void userGuide(javafx.event.ActionEvent actionEvent) {
+
+        // Gets the users path to file.
+        String path = System.getProperty("user.dir")+"\\src\\teamAssign\\files\\UserDocument.pdf";
+        HostServices hs =  getHostServices();
+        hs.showDocument(path);
+
+    }
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * opens NewDataSet page to create a net data set
+     * @param actionEvent
+     * @throws IOException
+     */
     public void newDataSetBtnClk(javafx.event.ActionEvent actionEvent) throws IOException {
         Parent newDataSetParent = FXMLLoader.load(getClass().getResource("NewDataSet.fxml"));
         Scene newDataSetScene = new Scene(newDataSetParent);
@@ -147,8 +215,4 @@ public class MainPage extends Main{
         window.setScene(newDataSetScene);
         window.show();
     }
-
-
-
-
 }

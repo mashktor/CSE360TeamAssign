@@ -16,7 +16,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Collections;
 
-import static javafx.application.Application.launch;
 import static teamAssign.Main.dataSet;
 
 public class AddSingle

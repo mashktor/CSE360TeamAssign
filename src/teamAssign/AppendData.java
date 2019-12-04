@@ -36,6 +36,19 @@ public class AppendData
 
         final FileChooser fileChooser = new FileChooser();
 
+        // File filter to limit user to filetypes .txt, .csv
+        FileChooser.ExtensionFilter txtFilter =
+                new FileChooser.ExtensionFilter(
+                        "TEXT files (*.txt)",
+                        "*.txt");
+        FileChooser.ExtensionFilter csvFilter =
+                new FileChooser.ExtensionFilter(
+                        "CSV files (*.csv)",
+                        "*.csv");
+
+        fileChooser.getExtensionFilters().add(txtFilter);
+        fileChooser.getExtensionFilters().add(csvFilter);
+
         File file = fileChooser.showOpenDialog(stage);
         if (file != null) {
             openFile(file);

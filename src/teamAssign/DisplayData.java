@@ -20,8 +20,11 @@ import java.util.ArrayList;
 import java.util.List;
 import teamAssign.NewDataSet;
 
+import static teamAssign.Main.dataSet;
+import static teamAssign.Main.success;
+import static teamAssign.NewDataSet.*;
 
-public class DisplayData extends NewDataSet{
+public class DisplayData {
 
     @FXML   ListView table1;
     @FXML   ListView table2;
