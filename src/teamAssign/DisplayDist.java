@@ -15,12 +15,12 @@ public class DisplayDist {
 
     @FXML
     MenuBar myMenuBar;
-
+    
     @FXML
     protected void errorLogMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
         Parent parent = FXMLLoader.load(getClass().getResource("ErrorLog.fxml"));
         Scene parentScene = new Scene(parent);
-
+        
         // This line gets the stage information
         Stage window  = (Stage) myMenuBar.getScene().getWindow();
 
