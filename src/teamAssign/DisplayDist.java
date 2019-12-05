@@ -128,8 +128,8 @@ public class DisplayDist {
 				set10++; 
 			}
 		}
-		//test
-		float tests; 
+		
+		
 		float average1 = (sum1/set1) % 10;
 		float average2 = (sum2/set2) % 10;
 		float average3 = (sum3/set3) % 10;
