@@ -45,7 +45,7 @@ public class ErrorLog extends Main{
     
     //Initializes error text area
     public void initErrorArea() throws IOException{
-        String path = System.getProperty("user.dir")+"\\src\\teamAssign\\files\\errorMsg.txt";
+    	String path = System.getProperty("user.dir")+"\\src\\teamAssign\\files\\errorMsg.txt";
     	Scanner scn = new Scanner(new File(path));
     		while(scn.hasNextLine()) {
     			errorArea.appendText(scn.nextLine() + "\n");
@@ -69,7 +69,8 @@ public class ErrorLog extends Main{
     
     //clear error log text file
     public static void clearError() throws IOException{
-    	BufferedWriter writer = new BufferedWriter(new FileWriter("errorMsg.txt", false));
+    	String path = System.getProperty("user.dir")+"\\src\\teamAssign\\files\\errorMsg.txt";
+    	BufferedWriter writer = new BufferedWriter(new FileWriter(path, false));
     	writer.flush();
     	writer.close();
     }
@@ -124,6 +125,7 @@ public class ErrorLog extends Main{
 
     @FXML
     protected void onLoadFileMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
+    	ErrorLog.clearError();
         Parent newDataSetParent = FXMLLoader.load(getClass().getResource("NewDataSet.fxml"));
         Scene newDataSetScene = new Scene(newDataSetParent);
 

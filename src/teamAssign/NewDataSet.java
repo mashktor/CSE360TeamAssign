@@ -91,8 +91,7 @@ public class NewDataSet {
                 		return 0;
                 	}
                 	
-                	//clear error log for creating new data base
-                	ErrorLog.clearError();
+                	
                 	
                     Parent newDataSetParent = FXMLLoader.load(getClass().getResource("DisplayData.fxml"));
                     Scene newDataSetScene = new Scene(newDataSetParent);
@@ -119,8 +118,7 @@ public class NewDataSet {
             		return 0;
             	}
             	
-            	//clear error log for creating new database
-            	ErrorLog.clearError();
+            	
             	
                 Parent newDataSetParent = FXMLLoader.load(getClass().getResource("DisplayData.fxml"));
                 Scene newDataSetScene = new Scene(newDataSetParent);
@@ -267,6 +265,8 @@ public class NewDataSet {
         File file = fileChooser.showOpenDialog(stage);
         if (file != null) {
             openFile(file);
+        }else {
+        	
         }
         stage.show();
         stage.close();
@@ -282,6 +282,7 @@ public class NewDataSet {
      */
     //TODO: Error handling for out of bounds data entries
     private boolean openFile(File file) throws FileNotFoundException {
+    	dataSet.clear();
     	id = name.getText();
 
         Scanner data = new Scanner(file);

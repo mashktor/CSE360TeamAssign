@@ -33,7 +33,7 @@ public class MainPage extends Main{
     /**
      * Initializes the first scene by disabling the menuitems when there is no dataset
      */
-    public void initialize() {
+    public void initialize() throws IOException{
         if(success == false){
             displayData.setDisable(true);
             displayGraph.setDisable(true);
@@ -42,6 +42,8 @@ public class MainPage extends Main{
             addSingle.setDisable(true);
             deleteSingle.setDisable(true);
         }
+        
+        ErrorLog.clearError();
     }
 
 
@@ -120,6 +122,7 @@ public class MainPage extends Main{
      */
     @FXML
     protected void onLoadFileMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
+    	ErrorLog.clearError();
         Parent newDataSetParent = FXMLLoader.load(getClass().getResource("NewDataSet.fxml"));
         Scene newDataSetScene = new Scene(newDataSetParent);
 
