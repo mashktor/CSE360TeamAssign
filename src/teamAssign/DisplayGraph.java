@@ -27,8 +27,8 @@ import java.util.List;
 
 public class DisplayGraph {
 
-	@FXML CategoryAxis xAxis;
-	@FXML NumberAxis yAxis;
+	@FXML NumberAxis xAxis;
+	@FXML CategoryAxis yAxis;
 	@FXML BarChart graph;
 	
 	public void initialize() throws Exception
@@ -112,27 +112,24 @@ public class DisplayGraph {
 		
 		
 		//for setting the xAxis and yAxis labels.
-
-		xAxis.setLabel("Grades");
-		yAxis.setLabel("Occurrances");
+		xAxis.setLabel("Occurrances");
+		yAxis.setLabel("Grades"); 
 		
 		
-		//ALL CODE BELOW, is suppose to draw the graph, but it doesn't work right now
-	//	BarChart<String,Number> bc = new BarChart(xAxis,yAxis);
 		XYChart.Series series1 = new XYChart.Series();
-		series1.setName("Percentages");
+		series1.setName("Data");
 
-	   series1.getData().add(new XYChart.Data("0 to 9%", set1));
-	   series1.getData().add(new XYChart.Data("10 to 19%", set2));
-	   series1.getData().add(new XYChart.Data("20 to 29%", set3));
-	   series1.getData().add(new XYChart.Data("30 to 39%", set4));
-	   series1.getData().add(new XYChart.Data("40 to 49%", set5));
-	   series1.getData().add(new XYChart.Data("50 to 59%", set6));
-	   series1.getData().add(new XYChart.Data("60 to 69%", set7));
-	   series1.getData().add(new XYChart.Data("70 to 79%", set8));
-	   series1.getData().add(new XYChart.Data("80 to 89%", set9));
-	   series1.getData().add(new XYChart.Data("90 to 100%", set10));
-
+	   series1.getData().add(new XYChart.Data(set1, "0 to 9%"));
+	   series1.getData().add(new XYChart.Data(set2, "10 to 19%"));
+	   series1.getData().add(new XYChart.Data(set3, "20 to 29%"));
+	   series1.getData().add(new XYChart.Data(set4, "30 to 39%"));
+	   series1.getData().add(new XYChart.Data(set5, "40 to 49%"));
+	   series1.getData().add(new XYChart.Data(set6, "50 to 59%"));
+	   series1.getData().add(new XYChart.Data(set7, "60 to 69%"));
+	   series1.getData().add(new XYChart.Data(set8, "70 to 79%"));
+	   series1.getData().add(new XYChart.Data(set9, "80 to 89%"));
+	   series1.getData().add(new XYChart.Data(set10, "90 to 100%"));
+	   
 	   graph.getData().addAll(series1);
 
 	}

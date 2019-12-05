@@ -72,12 +72,12 @@
         </VBox>
     </bottom>
     <center>
-        <BarChart legendSide="RIGHT" title="Distribution by Percentage" BorderPane.alignment="CENTER">
+        <BarChart legendSide="RIGHT" fx:id="graph" title="Distribution by Percentage" BorderPane.alignment="CENTER">
             <xAxis>
-                <CategoryAxis label="Average per 10 percent" side="BOTTOM" />
+                <NumberAxis fx:id = "xAxis" label="Average per 10 percent" side="BOTTOM" />
             </xAxis>
             <yAxis>
-                <NumberAxis label="Number of occurance" side="LEFT" />
+                <CategoryAxis fx:id = "yAxis" label="Number of occurance" side="LEFT" />
             </yAxis>
             <padding>
                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
