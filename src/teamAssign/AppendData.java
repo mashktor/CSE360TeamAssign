@@ -15,7 +15,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 import javafx.stage.Stage;
@@ -86,12 +88,21 @@ public class AppendData
      */
     private boolean openFile(File file) throws Exception
     {
+    	List<Float> dataSetTemp = new ArrayList<Float>();
         Scanner data = new Scanner(file);
         String [] temp;
         int i = 0;
         while(data.hasNextLine()) {
             temp = data.nextLine().split(",");
             for(int x = 0; x < temp.length; x++) {
+            	try {
+            		Float.parseFloat(temp[x]);
+            	}catch(NumberFormatException e) {
+            		ErrorLog.addError("File contained non numerical value.  :  Erase non numerical values from file.");
+                    entryNotValid1.setText("File contains non numerical value,");
+                    entryNotValid2.setText("remove non numerical values to append.");
+                    return false;
+            	}
             	if(Float.parseFloat(temp[x]) > NewDataSet.max || 
             			Float.parseFloat(temp[x]) < NewDataSet.min) {
             		ErrorLog.addError("File contains out of bounds float.  :  Remove invalid input.");
@@ -104,11 +115,12 @@ public class AppendData
             }
             
             for(int j = 0; j < temp.length; j++){
-            		dataSet.add(Float.parseFloat(temp[j]));
-                    System.out.println(dataSet.get(i));
+            		dataSetTemp.add(Float.parseFloat(temp[j]));
+                    System.out.println(dataSetTemp.get(i));
                     i++;
             }
         }
+        dataSet.addAll(dataSetTemp);
         return true;
     }
 

@@ -139,7 +139,7 @@ public class NewDataSet {
     
     
     
-    //check bounds
+    //check bounds and numerical value
     public boolean outOfBounds() throws IOException{
     	for(int index = 0; index < dataSet.size(); index++) {
     		if(dataSet.get(index) < min || dataSet.get(index) > max){
@@ -281,7 +281,7 @@ public class NewDataSet {
      * @throws FileNotFoundException
      */
     //TODO: Error handling for out of bounds data entries
-    private boolean openFile(File file) throws FileNotFoundException {
+    private boolean openFile(File file) throws FileNotFoundException, IOException {
     	dataSet.clear();
     	id = name.getText();
 
@@ -291,6 +291,14 @@ public class NewDataSet {
         while(data.hasNextLine()) {
               temp = data.nextLine().split(",");
             for(int j = 0; j < temp.length; j++){
+            	try {
+            		Float.parseFloat(temp[j]);
+            	}catch(NumberFormatException e) {
+            		ErrorLog.addError("File contained non numerical value.  :  Erase non numerical values from file.");
+                    entryNotValid.setText("File contains non numerical value. File unloaded.");
+                    dataSet.clear();
+                    return false;
+            	}
                 dataSet.add(Float.parseFloat(temp[j]));
                 System.out.println(dataSet.get(i));
                 i++;
