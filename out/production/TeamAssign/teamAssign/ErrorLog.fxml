@@ -83,7 +83,7 @@
     <bottom>
         <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
             <children>
-                <Button mnemonicParsing="false" text="Clear Error Log">
+                <Button mnemonicParsing="false" onAction="#clearErrorLog" text="Clear Error Log">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>

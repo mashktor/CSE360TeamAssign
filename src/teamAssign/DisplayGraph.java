@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 import javafx.stage.*; 
 
 import static teamAssign.Main.dataSet;
-import teamAssign.NewDataSet;
+import static teamAssign.NewDataSet.*;
 
 import java.io.IOException;
 import java.security.acl.Group;
@@ -28,7 +28,8 @@ import java.util.List;
 public class DisplayGraph {
 
 	@FXML CategoryAxis xAxis;
-	@FXML NumberAxis yAxis; 
+	@FXML NumberAxis yAxis;
+	@FXML BarChart graph;
 	
 	public void initialize() throws Exception
 	{
@@ -37,12 +38,12 @@ public class DisplayGraph {
 	
 	public void setData()//splits the data into 10 sets (for each column)
 	{	
-		if(NewDataSet.min < 0)
+		if(min < 0)
 		{
-			NewDataSet.min = -1 * NewDataSet.min; //converts to positive
+			min = -1 * min; //converts to positive
 		}
 				
-		int range = (int) (NewDataSet.max - NewDataSet.min);  
+		int range = (int) (max - min);
 		
 		int set1 = 0; 
 		int set2 = 0; 
@@ -55,7 +56,7 @@ public class DisplayGraph {
 		int set9 = 0; 
 		int set10 = 0; 
 		
-		int ninty = (int) (range * 0.90);
+		int ninety = (int) (range * 0.90);
 		int eighty = (int) (range * 0.80);
 		int seventy = (int) (range * 0.70); 
 		int sixty = (int) (range * 0.60);
@@ -99,27 +100,28 @@ public class DisplayGraph {
 			{
 				set8++; 
 			}
-			else if(dataSet.get(i) >= eighty && dataSet.get(i) < ninty)//80-89%
+			else if(dataSet.get(i) >= eighty && dataSet.get(i) < ninety)//80-89%
 			{
 				set9++; 
 			}
-			else if(dataSet.get(i) >= ninty)//top 90%
+			else if(dataSet.get(i) >= ninety)//top 90%
 			{
 				set10++; 
 			}
 		}
 		
 		
-		//for setting the xAxis and yAxis labels. 
+		//for setting the xAxis and yAxis labels.
+
 		xAxis.setLabel("Grades");
 		yAxis.setLabel("Occurrances");
 		
 		
 		//ALL CODE BELOW, is suppose to draw the graph, but it doesn't work right now
-		BarChart<String,Number> bc = new BarChart(xAxis,yAxis);
+	//	BarChart<String,Number> bc = new BarChart(xAxis,yAxis);
 		XYChart.Series series1 = new XYChart.Series();
 		series1.setName("Percentages");
-		
+
 	   series1.getData().add(new XYChart.Data("0 to 9%", set1));
 	   series1.getData().add(new XYChart.Data("10 to 19%", set2));
 	   series1.getData().add(new XYChart.Data("20 to 29%", set3));
@@ -130,13 +132,9 @@ public class DisplayGraph {
 	   series1.getData().add(new XYChart.Data("70 to 79%", set8));
 	   series1.getData().add(new XYChart.Data("80 to 89%", set9));
 	   series1.getData().add(new XYChart.Data("90 to 100%", set10));
-	        
-	   Scene scene = new Scene(bc,800,600); 
-	   bc.getData().addAll(series1);
-       
-	   Stage window  = (Stage) myMenuBar.getScene().getWindow();
-	   window.setScene(scene); 
-	   window.show(); 
+
+	   graph.getData().addAll(series1);
+
 	}
 	
 	

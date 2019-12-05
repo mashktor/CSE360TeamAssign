@@ -72,7 +72,7 @@
         </VBox>
     </bottom>
     <center>
-        <BarChart legendSide="RIGHT" title="Grade Per 10%" BorderPane.alignment="CENTER">
+        <BarChart legendSide="RIGHT" fx:id="graph" title="Grade Per 10%" BorderPane.alignment="CENTER">
             <xAxis>
                 <CategoryAxis fx:id = "xAxis" side="BOTTOM" />
             </xAxis>

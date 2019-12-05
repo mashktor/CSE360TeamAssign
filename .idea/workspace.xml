@@ -4,13 +4,11 @@
     <list default="true" id="d898f9ec-141f-428c-8730-ea97917d41a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/errorMsg.txt" beforeDir="false" afterPath="$PROJECT_DIR$/errorMsg.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/AddSingle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/AddSingle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/ErrorLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/ErrorLog.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/ErrorLog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/ErrorLog.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/files/errorMsg.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/files/errorMsg.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/AddSingle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/AddSingle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/ErrorLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/ErrorLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/files/errorMsg.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/files/errorMsg.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamAssign/DisplayGraph.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/DisplayGraph.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamAssign/DisplayGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/DisplayGraph.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,6 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1574861713378</updated>
       <workItem from="1574861717087" duration="24189000" />
+      <workItem from="1575517649946" duration="1342000" />
     </task>
     <servers />
   </component>
