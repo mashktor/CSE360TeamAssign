@@ -42,7 +42,7 @@ public class DisplayGraph {
 			NewDataSet.min = -1 * NewDataSet.min; //converts to positive
 		}
 				
-		int dataSize = (int) (NewDataSet.max - NewDataSet.min);  
+		int range = (int) (NewDataSet.max - NewDataSet.min);  
 		
 		int set1 = 0; 
 		int set2 = 0; 
@@ -55,17 +55,17 @@ public class DisplayGraph {
 		int set9 = 0; 
 		int set10 = 0; 
 		
-		int ninty = (int) (dataSize * 0.90);
-		int eighty = (int) (dataSize * 0.80);
-		int seventy = (int) (dataSize * 0.70); 
-		int sixty = (int) (dataSize * 0.60);
-		int fifty = (int) (dataSize * 0.50);
-		int forty = (int) (dataSize * 0.40);
-		int thirty = (int) (dataSize * 0.30);
-		int twenty = (int) (dataSize * 0.20);
-		int ten = (int) (dataSize * 0.10);
+		int ninty = (int) (range * 0.90);
+		int eighty = (int) (range * 0.80);
+		int seventy = (int) (range * 0.70); 
+		int sixty = (int) (range * 0.60);
+		int fifty = (int) (range * 0.50);
+		int forty = (int) (range * 0.40);
+		int thirty = (int) (range * 0.30);
+		int twenty = (int) (range * 0.20);
+		int ten = (int) (range * 0.10);
 		
-		for(int i = 0; i < dataSize; i++)
+		for(int i = 0; i < dataSet.size(); i++)
 		{
 			if(dataSet.get(i) < ten)//0-9%
 			{
