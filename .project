@@ -16,9 +16,9 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>UserDocument .pdf</name>
+			<name>out/errorMsg.txt</name>
 			<type>1</type>
-			<location>/Users/marcoesquivel/git/CSE360TeamAssign/src/teamAssign/files/UserDocument .pdf</location>
+			<location>/Users/marcoesquivel/git/CSE360TeamAssign/src/teamAssign/files/errorMsg.txt</location>
 		</link>
 	</linkedResources>
 </projectDescription>

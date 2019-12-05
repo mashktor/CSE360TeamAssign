@@ -12,6 +12,8 @@
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
+        <Label fx:id="entryNotValid1" layoutX="45.0" layoutY="60.0" textFill="RED" wrapText = "true" />
+        <Label fx:id="entryNotValid2" layoutX="45.0" layoutY="75.0" textFill="RED" wrapText = "true" />
         <Button fx:id="browse" layoutX="154.0" layoutY="113.0" mnemonicParsing="false" onAction="#openBrowseBtn" prefHeight="51.0" prefWidth="125.0" text="Browse for file" />
         <Button fx:id="cancelButton" layoutX="41.0" layoutY="113.0" mnemonicParsing="false" onAction="#cancelButton" prefHeight="51.0" prefWidth="92.0" text="Cancel" />
     </children>
