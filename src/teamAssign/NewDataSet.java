@@ -30,6 +30,7 @@ public class NewDataSet {
     @FXML public TextField topBound;
     @FXML public TextField lowBound;
     @FXML public TextField name;
+    @FXML public Label entryNotValid;
 	@FXML public static String id = "";
 	@FXML Label errNoName;
 	public static float max, min;
@@ -47,7 +48,6 @@ public class NewDataSet {
     public void btnCancelClk(javafx.event.ActionEvent actionEvent) throws IOException {
 
         //If data has been created go to DisplayData, Else go back to start Menu
-        if(success == false) {
             Parent parent = FXMLLoader.load(getClass().getResource("./MainPage.fxml"));
             Scene parentScene = new Scene(parent);
 
@@ -56,17 +56,7 @@ public class NewDataSet {
 
             window.setScene(parentScene);
             window.show();
-        }
-        else {
-            Parent parent = FXMLLoader.load(getClass().getResource("./DisplayData.fxml"));
-            Scene parentScene = new Scene(parent);
-
-            // This line gets the stage information
-            Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-
-            window.setScene(parentScene);
-            window.show();
-        }
+       
     }
 
     /**
@@ -77,12 +67,16 @@ public class NewDataSet {
      * @throws IOException
      */
     public int btnCreateClk(javafx.event.ActionEvent actionEvent) throws IOException {
+    	
+    	//empty name check
         if(name.getText().isEmpty()){
             errNoName.setText("Please enter a name for the Data Set");
             return 0;
         }
         else {
-            if(success == false){
+        	
+        	//check for empty entry
+            if(dataSet.size() == 0){
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Empty Data Set Warning");
                 alert.setHeaderText("You are creating an empty data set");
@@ -90,6 +84,16 @@ public class NewDataSet {
 
                 Optional<ButtonType> result = alert.showAndWait();
                 if (result.get() == ButtonType.OK){
+                	
+                	
+                	//error checking 
+                	if(error()) {
+                		return 0;
+                	}
+                	
+                	//clear error log for creating new data base
+                	ErrorLog.clearError();
+                	
                     Parent newDataSetParent = FXMLLoader.load(getClass().getResource("DisplayData.fxml"));
                     Scene newDataSetScene = new Scene(newDataSetParent);
                     // Sets success = true because we have created a dataset, it might be empty.
@@ -106,6 +110,18 @@ public class NewDataSet {
                 }
             }
             else {
+            	
+            	if(error()) {
+            		return 0;
+            	}
+
+            	if(outOfBounds()) {
+            		return 0;
+            	}
+            	
+            	//clear error log for creating new database
+            	ErrorLog.clearError();
+            	
                 Parent newDataSetParent = FXMLLoader.load(getClass().getResource("DisplayData.fxml"));
                 Scene newDataSetScene = new Scene(newDataSetParent);
                 // Sets success = true because we have created a dataset, it might be empty.
@@ -122,6 +138,107 @@ public class NewDataSet {
 
         return 1;
     }
+    
+    
+    
+    //check bounds
+    public boolean outOfBounds() throws IOException{
+    	for(int index = 0; index < dataSet.size(); index++) {
+    		if(dataSet.get(index) < min || dataSet.get(index) > max){
+                //Send error to error list and cancel import
+    			ErrorLog.addError("File contains out of bounds float.  :  Change bounds or remove invalid input.");
+    			entryNotValid.setText("File closed. Remove invalid entry or change bounds and reload.");
+                dataSet.clear();
+                return true;
+        	}
+    	}
+    	return false;
+    }
+    
+    
+    //check for valid float input 
+    public boolean error() {
+    	max = 100.0f;
+    	if(!topBound.getText().isEmpty() && !lowBound.getText().isEmpty()) {
+    		try {
+    			max = Float.parseFloat(topBound.getText());
+    			min = Float.parseFloat(lowBound.getText());
+    			if(max <= min) {
+    				try {
+    					ErrorLog.addError("Max must be larger than min  :  Try entering new bounds values.");
+    					entryNotValid.setText("Upper bound must be larger than lower bound.");
+    					return true;
+    				}catch(IOException ex) {
+    					System.out.println("Should never happen");
+    				}
+    				
+    			}
+    		}catch(NumberFormatException e) {
+    			try{
+    					ErrorLog.addError("Bounds contain non numerical value.  :  Try entering numerical values.");
+    					 Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION);
+    		                alert1.setTitle("Please enter numerical values for your bounds.");
+    		                alert1.setHeaderText("If numerical values are not provided default values will be used.");
+    		                alert1.setContentText("Click okay to continue with default bounds or cancel to reset bounds.");
+
+    		                Optional<ButtonType> result1 = alert1.showAndWait();
+    		                if (result1.get() == ButtonType.OK){
+    		                	
+    		                } else {
+    		                    return true;
+    		                }
+    				}catch(IOException ex) {
+    					System.out.println("Should never happen");
+    				}
+    			}
+        }else if(!topBound.getText().isEmpty() && lowBound.getText().isEmpty()) {
+        	try {
+        		max = Float.parseFloat(topBound.getText());
+        	}catch(NumberFormatException e) {
+    			try{
+					ErrorLog.addError("Upper Bound contains non numerical value.  :  Try entering a numerical value.");
+					 Alert alert2 = new Alert(Alert.AlertType.CONFIRMATION);
+		                alert2.setTitle("Please enter numerical value for your upper bound.");
+		                alert2.setHeaderText("If a numerical value is not provided the default value will be used.");
+		                alert2.setContentText("Click okay to continue with default upper bound or cancel to reset bounds.");
+
+		                Optional<ButtonType> result2 = alert2.showAndWait();
+		                if (result2.get() == ButtonType.OK){
+		                	
+		                } else {
+		                    return true;
+		                }
+				}catch(IOException ex) {
+					System.out.println("Should never happen");
+				}
+			}
+        }else if(topBound.getText().isEmpty() && !lowBound.getText().isEmpty()) {
+        	try {
+        		min = Float.parseFloat(lowBound.getText());
+        	}catch(NumberFormatException e) {
+    			try{
+					ErrorLog.addError("Lower Bound contains non numerical value.  :  Try entering a numerical value.");
+					 Alert alert3 = new Alert(Alert.AlertType.CONFIRMATION);
+		                alert3.setTitle("Please enter numerical value for your lower bound.");
+		                alert3.setHeaderText("If a numerical value is not provided the default value will be used.");
+		                alert3.setContentText("Click okay to continue with default lower bound or cancel to reset bounds.");
+
+		                Optional<ButtonType> result3 = alert3.showAndWait();
+		                if (result3.get() == ButtonType.OK){
+		                	
+		                } else {
+		                    return true;
+		                }
+				}catch(IOException ex) {
+					System.out.println("Should never happen");
+				}
+			}
+        }
+    	
+    	return false;
+    }
+    
+    
 
     /**
      * Opens a browse window and asks user to find a file
@@ -167,28 +284,12 @@ public class NewDataSet {
     private boolean openFile(File file) throws FileNotFoundException {
     	id = name.getText();
 
-    	// Default value = 100,  if text field is not empty apply new value
-    	max = 100.0f;
-    	if(!topBound.getText().isEmpty()) {
-            max = Float.parseFloat(topBound.getText());
-        }
-    	//Default value = 0,  if text field is not empty apply new value
-    	min = 0.0f;
-        if(!lowBound.getText().isEmpty()) {
-            min = Float.parseFloat(lowBound.getText());
-        }
-
         Scanner data = new Scanner(file);
         String [] temp;
         int i = 0;
         while(data.hasNextLine()) {
               temp = data.nextLine().split(",");
             for(int j = 0; j < temp.length; j++){
-            	if(!(Float.parseFloat(temp[j]) >= min) || !(Float.parseFloat(temp[j]) <= max)){
-                    //Send error to error list and cancel import
-                    dataSet.clear();
-                    return success;
-            	}
                 dataSet.add(Float.parseFloat(temp[j]));
                 System.out.println(dataSet.get(i));
                 i++;

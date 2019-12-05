@@ -48,7 +48,7 @@ public class AddSingle
 
             //adds the input to the "dataSet" ArrayList
             dataSet.add(grade);
-            //sorts the dataSet after new data is inputted
+            //sorts the dataSet after new data is inputed
             Collections.sort(dataSet, Collections.reverseOrder());
 
             //"closes" out the window when enter is hit
