@@ -42,6 +42,7 @@
                         <Font size="14.0" />
                     </font>
                 </Label>
+                <Label fx:id="entryNotValid" layoutX="193.0" layoutY="88.0" textFill="RED" />
                 <Label layoutX="245.0" layoutY="253.0" prefHeight="17.0" prefWidth="137.0" text="Choose file in import:">
                     <font>
                         <Font size="14.0" />

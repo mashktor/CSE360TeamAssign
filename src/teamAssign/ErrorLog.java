@@ -64,7 +64,13 @@ public class ErrorLog extends Main{
     	writer.append(" - " + errorMsg + "\n");
     	writer.close();
     	
-    	
+    }
+    
+    //clear error log text file
+    public static void clearError() throws IOException{
+    	BufferedWriter writer = new BufferedWriter(new FileWriter("errorMsg.txt", false));
+    	writer.flush();
+    	writer.close();
     }
 
     @FXML
@@ -176,6 +182,21 @@ public class ErrorLog extends Main{
         Stage window  = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
 
         window.setScene(newDataSetScene);
+        window.show();
+    }
+    
+    @FXML
+    public void clearErrorLog(javafx.event.ActionEvent actionEvent) throws IOException{
+    	
+    	clearError();
+    	
+    	
+    	Parent newErrorLogParent = FXMLLoader.load(getClass().getResource("ErrorLog.fxml"));
+    	Scene newErrorLogScene = new Scene(newErrorLogParent);
+    	
+    	Stage window  = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+    	
+    	window.setScene(newErrorLogScene);
         window.show();
     }
 }
