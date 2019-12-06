@@ -23,6 +23,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,6 +48,7 @@ public class DisplayData {
     @FXML   Label realName;
 
     public void initialize() throws Exception {
+        Collections.sort(dataSet, Collections.reverseOrder());
         fillTable();
         fillAnalysis();
         realName.setText(id);
@@ -259,7 +261,6 @@ public class DisplayData {
         writer.newLine();
         writer.newLine();
         writer.write("-------------------------------------------------------------");
-
 
         writer.close();
 

@@ -67,7 +67,6 @@ public class NewDataSet {
      * @throws IOException
      */
     public int btnCreateClk(javafx.event.ActionEvent actionEvent) throws IOException {
-    	
     	//empty name check
         if(name.getText().isEmpty()){
             errNoName.setText("Please enter a name for the Data Set");
@@ -138,14 +137,16 @@ public class NewDataSet {
     }
     
     
-    
+
     //check bounds and numerical value
     public boolean outOfBounds() throws IOException{
     	for(int index = 0; index < dataSet.size(); index++) {
     		if(dataSet.get(index) < min || dataSet.get(index) > max){
                 //Send error to error list and cancel import
-    			ErrorLog.addError("File contains out of bounds float.  :  Change bounds or remove invalid input.");
-    			entryNotValid.setText("File closed. Remove invalid entry or change bounds and reload.");
+    			ErrorLog.addError("File contains out of bounds value.  " +
+                        ":  Change bounds or remove invalid input.");
+    			entryNotValid.setText("File closed. Remove invalid entry or change bounds and reload." +
+                        " Error found at entry: " + (index + 1));
                 dataSet.clear();
                 return true;
         	}
@@ -304,7 +305,6 @@ public class NewDataSet {
                 i++;
             }
         }
-        Collections.sort(dataSet, Collections.reverseOrder());
         success = true;
         return success;
     }

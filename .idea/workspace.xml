@@ -3,16 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="d898f9ec-141f-428c-8730-ea97917d41a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/AppendData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/AppendData.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayData.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayData.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayDist.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayDist.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayGraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/DisplayData.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/DisplayData.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/NewDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/NewDataSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/files/errorMsg.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/files/errorMsg.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamAssign/AppendData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/AppendData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/teamAssign/DisplayData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/DisplayData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/DisplayDist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/DisplayDist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/DisplayGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/DisplayGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamAssign/NewDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/NewDataSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamAssign/files/errorMsg.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/files/errorMsg.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +89,7 @@
       <updated>1574861713378</updated>
       <workItem from="1574861717087" duration="24189000" />
       <workItem from="1575517649946" duration="1342000" />
-      <workItem from="1575590847976" duration="7042000" />
+      <workItem from="1575590847976" duration="8697000" />
     </task>
     <servers />
   </component>

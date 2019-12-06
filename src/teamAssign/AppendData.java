@@ -92,6 +92,7 @@ public class AppendData
         Scanner data = new Scanner(file);
         String [] temp;
         int i = 0;
+        int countLines = 1;
         while(data.hasNextLine()) {
             temp = data.nextLine().split(",");
             for(int x = 0; x < temp.length; x++) {
@@ -105,7 +106,8 @@ public class AppendData
             	}
             	if(Float.parseFloat(temp[x]) > NewDataSet.max || 
             			Float.parseFloat(temp[x]) < NewDataSet.min) {
-            		ErrorLog.addError("File contains out of bounds float.  :  Remove invalid input.");
+            		ErrorLog.addError("File contains out of bounds float.  :  Remove invalid input."+
+                            " Error found on line: " + countLines + " entry : " +(x + 1));
             		entryNotValid1.setWrapText(true);
             		entryNotValid1.setTextAlignment(TextAlignment.JUSTIFY);
             		entryNotValid1.setText("File closed. Remove invalid entry, ");
@@ -119,6 +121,7 @@ public class AppendData
                     System.out.println(dataSetTemp.get(i));
                     i++;
             }
+            countLines++;
         }
         dataSet.addAll(dataSetTemp);
         return true;
