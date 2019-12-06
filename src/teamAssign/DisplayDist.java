@@ -253,7 +253,6 @@ public class DisplayDist {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.showAndWait();
-
     }
 
     @FXML
@@ -266,6 +265,7 @@ public class DisplayDist {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.showAndWait();
+
     };
 
     @FXML

@@ -354,6 +354,8 @@ public class DisplayData {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.showAndWait();
+        
+        fillTable();
     }
 
     @FXML
@@ -367,6 +369,7 @@ public class DisplayData {
         stage.setScene(scene);
         stage.showAndWait();
 
+        fillTable();
 
     };
 
@@ -380,6 +383,8 @@ public class DisplayData {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.showAndWait();
+
+        fillTable();
     };
 
     @FXML
