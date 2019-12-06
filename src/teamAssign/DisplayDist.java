@@ -1,6 +1,6 @@
 package teamAssign;
 
-import javafx.application.HostServices;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -18,12 +18,9 @@ import static teamAssign.Main.dataSet;
 import static teamAssign.NewDataSet.max;
 import static teamAssign.NewDataSet.min;
 
-import teamAssign.NewDataSet;
-
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import java.text.DecimalFormat;
 
 public class DisplayDist {
 	

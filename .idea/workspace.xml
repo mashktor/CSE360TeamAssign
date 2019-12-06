@@ -3,28 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d898f9ec-141f-428c-8730-ea97917d41a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayData.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayData.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayDist.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayDist.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayDist.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayDist.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayGraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayGraph.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayGraph.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/ErrorLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/ErrorLog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/ErrorLog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/ErrorLog.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/MainPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/MainPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/MainPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/DisplayData.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/DisplayData.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamAssign/AddSingle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/AddSingle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamAssign/AppendData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/AppendData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/teamAssign/DisplayData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/DisplayData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/DisplayDist.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/DisplayDist.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/teamAssign/DisplayDist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/DisplayDist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/DisplayGraph.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/DisplayGraph.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/teamAssign/DisplayGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/DisplayGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/ErrorLog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/ErrorLog.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/teamAssign/ErrorLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/ErrorLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/MainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/MainPage.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/teamAssign/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/files/errorMsg.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/files/errorMsg.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +96,7 @@
       <updated>1574861713378</updated>
       <workItem from="1574861717087" duration="24189000" />
       <workItem from="1575517649946" duration="1342000" />
-      <workItem from="1575590847976" duration="11156000" />
+      <workItem from="1575590847976" duration="11356000" />
     </task>
     <servers />
   </component>
@@ -136,7 +121,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/teamAssign/AppendData.java</url>
-          <line>91</line>
+          <line>87</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>

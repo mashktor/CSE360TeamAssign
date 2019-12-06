@@ -15,7 +15,6 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.MenuBar;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.*; 
 
 import static teamAssign.Main.dataSet;
 import static teamAssign.NewDataSet.*;
@@ -23,10 +22,6 @@ import static teamAssign.NewDataSet.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import java.security.acl.Group;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class DisplayGraph {
 
