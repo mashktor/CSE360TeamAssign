@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d898f9ec-141f-428c-8730-ea97917d41a5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/errorMsg.txt" beforeDir="false" afterPath="$PROJECT_DIR$/errorMsg.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/ErrorLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/ErrorLog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/ErrorLog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/ErrorLog.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/AppendData.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/AppendData.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayDist.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayDist.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayGraph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayGraph.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/DisplayGraph.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/files/errorMsg.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TeamAssign/teamAssign/files/errorMsg.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/DisplayGraph.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/DisplayGraph.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/teamAssign/DisplayGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/DisplayGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/teamAssign/DisplayDist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/teamAssign/DisplayDist.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,6 +87,7 @@
       <updated>1574861713378</updated>
       <workItem from="1574861717087" duration="24189000" />
       <workItem from="1575517649946" duration="1342000" />
+      <workItem from="1575590847976" duration="1257000" />
     </task>
     <servers />
   </component>
@@ -111,14 +112,20 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/teamAssign/AppendData.java</url>
-          <line>72</line>
+          <line>91</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/teamAssign/DisplayDist.java</url>
+          <line>171</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="dataSet" language="JAVA" />
+        <watch expression="series1" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
