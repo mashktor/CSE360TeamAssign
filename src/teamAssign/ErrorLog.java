@@ -1,5 +1,6 @@
 package teamAssign;
 
+import javafx.application.HostServices;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -11,11 +12,14 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.control.TextArea;
 
+import java.awt.*;
 import java.io.*;
 import java.util.*;
 import java.text.*;
 
-public class ErrorLog extends Main{
+
+
+public class ErrorLog extends Main {
 	
 	
 
@@ -171,7 +175,13 @@ public class ErrorLog extends Main{
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.showAndWait();
-    };
+    }
+
+    @FXML
+    protected void userGuideBtn(javafx.event.ActionEvent actionEvent) throws IOException  {
+        File userMan = new File("UserDocument.pdf");
+        Desktop.getDesktop().open(userMan);
+    }
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -11,6 +11,8 @@ import javafx.scene.control.MenuItem;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 
 
@@ -191,13 +193,9 @@ public class MainPage extends Main{
      * @param actionEvent
      */
     @FXML
-    protected void userGuide(javafx.event.ActionEvent actionEvent) {
-
-        // Gets the users path to file.
-        String path = System.getProperty("user.dir")+"\\src\\teamAssign\\files\\UserDocument.pdf";
-        HostServices hs =  getHostServices();
-        hs.showDocument(path);
-
+    protected void userGuide(javafx.event.ActionEvent actionEvent) throws IOException{
+        File userMan = new File("UserDocument.pdf");
+        Desktop.getDesktop().open(userMan);
     }
 
 

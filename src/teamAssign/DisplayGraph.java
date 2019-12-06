@@ -1,5 +1,6 @@
 package teamAssign;
 
+import javafx.application.HostServices;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -19,6 +20,8 @@ import javafx.stage.*;
 import static teamAssign.Main.dataSet;
 import static teamAssign.NewDataSet.*;
 
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.security.acl.Group;
 import java.util.ArrayList;
@@ -161,7 +164,7 @@ public class DisplayGraph {
 
         window.setScene(parentScene);
         window.show();
-    };
+    }
 
     @FXML
     protected void displayGraphMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
@@ -173,7 +176,7 @@ public class DisplayGraph {
 
         window.setScene(parentScene);
         window.show();
-    };
+    }
 
     @FXML
     protected void displayDistMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
@@ -185,7 +188,7 @@ public class DisplayGraph {
 
         window.setScene(parentScene);
         window.show();
-    };
+    }
 
     @FXML
     protected void displayDataMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
@@ -197,7 +200,7 @@ public class DisplayGraph {
 
         window.setScene(parentScene);
         window.show();
-    };
+    }
 
     @FXML
     protected void onLoadFileMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
@@ -210,7 +213,7 @@ public class DisplayGraph {
 
         window.setScene(newDataSetScene);
         window.show();
-    };
+    }
 
     @FXML
     public void deleteSingleMenuBtn(javafx.event.ActionEvent actionEvent) throws  IOException {
@@ -235,7 +238,7 @@ public class DisplayGraph {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.showAndWait();
-    };
+    }
 
     @FXML
     protected void OnSetAppendDataMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
@@ -247,7 +250,13 @@ public class DisplayGraph {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.showAndWait();
-    };
+    }
+
+	@FXML
+	protected void userGuideBtn(javafx.event.ActionEvent actionEvent) throws IOException  {
+		File userMan = new File("UserDocument.pdf");
+		Desktop.getDesktop().open(userMan);
+	}
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////

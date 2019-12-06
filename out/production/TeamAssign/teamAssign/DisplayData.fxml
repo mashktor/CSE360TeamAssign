@@ -41,7 +41,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="User Guide" />
+                        <MenuItem fx:id="userGuideBtn" mnemonicParsing="false" onAction="#userGuideBtn" text="User Guide" />
                         <MenuItem mnemonicParsing="false" onAction="#errorLogMenuBtn" text="Error Log" />
                     </items>
                 </Menu>

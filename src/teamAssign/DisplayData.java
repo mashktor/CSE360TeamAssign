@@ -1,5 +1,6 @@
 package teamAssign;
 
+import javafx.application.HostServices;
 import javafx.collections.FXCollections;
 
 import javafx.collections.ObservableList;
@@ -12,6 +13,7 @@ import javafx.scene.control.*;
 
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -46,6 +48,7 @@ public class DisplayData {
     @FXML   Label median;
     @FXML   Label mode;
     @FXML   Label realName;
+    @FXML
 
     public void initialize() throws Exception {
         Collections.sort(dataSet, Collections.reverseOrder());
@@ -354,8 +357,9 @@ public class DisplayData {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.showAndWait();
-        
+
         fillTable();
+        fillAnalysis();
     }
 
     @FXML
@@ -370,6 +374,7 @@ public class DisplayData {
         stage.showAndWait();
 
         fillTable();
+        fillAnalysis();
 
     };
 
@@ -385,6 +390,7 @@ public class DisplayData {
         stage.showAndWait();
 
         fillTable();
+        fillAnalysis();
     };
 
     @FXML
@@ -392,9 +398,16 @@ public class DisplayData {
         exportReport();
     }
 
+    @FXML
+    protected void userGuideBtn(javafx.event.ActionEvent actionEvent) throws IOException  {
+        File userMan = new File("UserDocument.pdf");
+        Desktop.getDesktop().open(userMan);
+    }
 
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void newDataSetBtnClk(javafx.event.ActionEvent actionEvent) throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Warning!");

@@ -1,5 +1,6 @@
 package teamAssign;
 
+import javafx.application.HostServices;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -19,6 +20,8 @@ import static teamAssign.NewDataSet.min;
 
 import teamAssign.NewDataSet;
 
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
 
@@ -135,25 +138,25 @@ public class DisplayDist {
 
 
 		if(set1 == 0) set1 = 1;
-		 average1 = (sum1/set1) % 10;
+		 average1 = (sum1/set1);
 		if(set2 == 0) set2 = 1;
-		 average2 = (sum2/set2) % 10;
+		 average2 = (sum2/set2);
 		if(set3 == 0) set3 = 1;
-		 average3 = (sum3/set3) % 10;
+		 average3 = (sum3/set3);
 		if(set4 == 0) set4 = 1;
-		 average4 = (sum4/set4) % 10;
+		 average4 = (sum4/set4);
 		if(set5 == 0) set5 = 1;
-		 average5 = (sum5/set5) % 10;
+		 average5 = (sum5/set5);
 		if(set6 == 0) set6 = 1;
-		 average6 = (sum6/set6) % 10;
+		 average6 = (sum6/set6);
 		if(set7 == 0) set7 = 1;
-		 average7 = (sum7/set7) % 10;
+		 average7 = (sum7/set7);
 		if(set8 == 0) set8 = 1;
-		 average8 = (sum8/set8) % 10;
+		 average8 = (sum8/set8);
 		if(set9 == 0) set9 = 1;
-		 average9 = (sum9/set9) % 10;
+		 average9 = (sum9/set9);
 		if(set10 == 0) set10 = 1;
-		 average10 = (sum10/set10) % 10;
+		 average10 = (sum10/set10);
 
 
 
@@ -266,7 +269,13 @@ public class DisplayDist {
         stage.setScene(scene);
         stage.showAndWait();
 
-    };
+    }
+
+	@FXML
+	protected void userGuideBtn(javafx.event.ActionEvent actionEvent) throws IOException  {
+		File userMan = new File("UserDocument.pdf");
+		Desktop.getDesktop().open(userMan);
+	}
 
     @FXML
     protected void OnSetAppendDataMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
