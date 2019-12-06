@@ -6,15 +6,76 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.scene.control.TextArea;
 
-import java.io.IOException;
+import java.awt.*;
+import java.io.*;
+import java.util.*;
 
-public class ErrorLog {
+
+
+public class ErrorLog extends Main {
+	
+	
 
     @FXML
     MenuBar myMenuBar;
+    @FXML
+    MenuItem displayData;
+    @FXML MenuItem displayGraph;
+    @FXML MenuItem displayDist;
+    @FXML MenuItem appendData;
+    @FXML MenuItem addSingle;
+    @FXML MenuItem deleteSingle;
+    @FXML TextArea errorArea;
+    @FXML
+    public void initialize() throws Exception {
+    	initErrorArea();
+        if(success == false){
+            displayData.setDisable(true);
+            displayGraph.setDisable(true);
+            displayDist.setDisable(true);
+            appendData.setDisable(true);
+            addSingle.setDisable(true);
+            deleteSingle.setDisable(true);
+        }
+    }
+    
+    
+    //Initializes error text area
+    public void initErrorArea() throws IOException{
+    	String path = System.getProperty("user.dir")+"\\src\\teamAssign\\files\\errorMsg.txt";
+    	Scanner scn = new Scanner(new File(path));
+    		while(scn.hasNextLine()) {
+    			errorArea.appendText(scn.nextLine() + "\n");
+    		}
+    		scn.close();
+    	
+    	
+    }
+    
+    
+    //addError method to create new error cases
+    public static void addError(String errorMsg) throws IOException {
+        String path = System.getProperty("user.dir")+"\\src\\teamAssign\\files\\errorMsg.txt";
+    	//update errorMsg text file
+    	BufferedWriter writer = new BufferedWriter(new FileWriter(path, true));
+    	writer.append(java.time.LocalDateTime.now().toString());
+    	writer.append(" - " + errorMsg + "\n");
+    	writer.close();
+    	
+    }
+    
+    //clear error log text file
+    public static void clearError() throws IOException{
+    	String path = System.getProperty("user.dir")+"\\src\\teamAssign\\files\\errorMsg.txt";
+    	BufferedWriter writer = new BufferedWriter(new FileWriter(path, false));
+    	writer.flush();
+    	writer.close();
+    }
 
     @FXML
     protected void errorLogMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
@@ -66,6 +127,7 @@ public class ErrorLog {
 
     @FXML
     protected void onLoadFileMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
+    	ErrorLog.clearError();
         Parent newDataSetParent = FXMLLoader.load(getClass().getResource("NewDataSet.fxml"));
         Scene newDataSetScene = new Scene(newDataSetParent);
 
@@ -111,7 +173,13 @@ public class ErrorLog {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setScene(scene);
         stage.showAndWait();
-    };
+    }
+
+    @FXML
+    protected void userGuideBtn(javafx.event.ActionEvent actionEvent) throws IOException  {
+        File userMan = new File("UserDocument.pdf");
+        Desktop.getDesktop().open(userMan);
+    }
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -125,6 +193,21 @@ public class ErrorLog {
         Stage window  = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
 
         window.setScene(newDataSetScene);
+        window.show();
+    }
+    
+    @FXML
+    public void clearErrorLog(javafx.event.ActionEvent actionEvent) throws IOException{
+    	
+    	clearError();
+    	
+    	
+    	Parent newErrorLogParent = FXMLLoader.load(getClass().getResource("ErrorLog.fxml"));
+    	Scene newErrorLogScene = new Scene(newErrorLogParent);
+    	
+    	Stage window  = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+    	
+    	window.setScene(newErrorLogScene);
         window.show();
     }
 }

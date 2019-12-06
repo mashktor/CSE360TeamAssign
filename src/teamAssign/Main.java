@@ -6,13 +6,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 
 public class Main extends Application {
 
     public static List<Float> dataSet = new ArrayList<Float>();
+    public static boolean success = false;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -26,4 +32,8 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+
 }
+
+

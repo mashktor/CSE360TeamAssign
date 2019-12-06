@@ -20,28 +20,28 @@
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
-                        <MenuItem id="newDataBtn" mnemonicParsing="false" onAction="#onLoadFileMenuBtn" text="Load File" />
+                        <MenuItem mnemonicParsing="false" onAction="#onLoadFileMenuBtn" text="Load File" />
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" text="Close" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#OnSetAppendDataMenuBtn" text="Append Data" />
-                        <MenuItem mnemonicParsing="false" onAction="#AddSingleMenuBtn" text="Add Single" />
-                        <MenuItem mnemonicParsing="false" onAction="#deleteSingleMenuBtn" text="Delete Single " />
+                        <MenuItem fx:id="appendData" mnemonicParsing="false" onAction="#OnSetAppendDataMenuBtn" text="Append Data" />
+                        <MenuItem fx:id="addSingle" mnemonicParsing="false" onAction="#AddSingleMenuBtn" text="Add Single" />
+                        <MenuItem fx:id="deleteSingle" mnemonicParsing="false" onAction="#deleteSingleMenuBtn" text="Delete Single " />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Tools">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#displayDataMenuBtn" text="Display Data" />
-                        <MenuItem mnemonicParsing="false" onAction="#displayGraphMenuBtn" text="Display Graph" />
-                        <MenuItem mnemonicParsing="false" onAction="#displayDistMenuBtn" text="Display Distribution" />
+                        <MenuItem fx:id="displayData" mnemonicParsing="false" onAction="#displayDataMenuBtn" text="Display Data" />
+                        <MenuItem fx:id="displayGraph" mnemonicParsing="false" onAction="#displayGraphMenuBtn" text="Display Graph" />
+                        <MenuItem fx:id="displayDist" mnemonicParsing="false" onAction="#displayDistMenuBtn" text="Display Distribution" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="User Guide" />
+                        <MenuItem mnemonicParsing="false" onAction="#userGuideBtn" text="User Guide" />
                         <MenuItem mnemonicParsing="false" onAction="#errorLogMenuBtn" text="Error Log" />
                     </items>
                 </Menu>
@@ -70,7 +70,7 @@
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="269.0" prefWidth="691.0">
                                     <children>
-                                        <TextArea editable="false" layoutX="1.0" layoutY="2.0" prefHeight="266.0" prefWidth="689.0" text="&lt;2019-11-25  09:58:12&gt;  File was not found or was lost     :    Try uploading a new file." />
+                                        <TextArea fx:id="errorArea" editable="false" layoutX="1.0" layoutY="2.0" prefHeight="266.0" prefWidth="689.0" />
                                     </children>
                                 </AnchorPane>
                             </content>
@@ -83,7 +83,7 @@
     <bottom>
         <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
             <children>
-                <Button mnemonicParsing="false" text="Clear Error Log">
+                <Button mnemonicParsing="false" onAction="#clearErrorLog" text="Clear Error Log">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>

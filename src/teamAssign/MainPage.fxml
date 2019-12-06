@@ -18,29 +18,29 @@
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
-                        <MenuItem id="newDataBtn" fx:id="hello" mnemonicParsing="false" onAction="#onLoadFileMenuBtn" text="Load File" />
+                        <MenuItem id="newDataBtn" fx:id="load" mnemonicParsing="false" onAction="#onLoadFileMenuBtn" text="Load File" />
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" text="Close" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#OnSetAppendDataMenuBtn" text="Append Data" />
-                        <MenuItem mnemonicParsing="false" onAction="#AddSingleMenuBtn" text="Add Single" />
-                        <MenuItem mnemonicParsing="false" onAction="#deleteSingleMenuBtn" text="Delete Single " />
+                        <MenuItem fx:id="appendData" mnemonicParsing="false" onAction="#OnSetAppendDataMenuBtn" text="Append Data" />
+                        <MenuItem fx:id="addSingle" mnemonicParsing="false" onAction="#AddSingleMenuBtn" text="Add Single" />
+                        <MenuItem fx:id="deleteSingle" mnemonicParsing="false" onAction="#deleteSingleMenuBtn" text="Delete Single " />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Tools">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#displayDataMenuBtn" text="Display Data" />
-                        <MenuItem mnemonicParsing="false" onAction="#displayGraphMenuBtn" text="Display Graph" />
-                        <MenuItem mnemonicParsing="false" onAction="#displayDistMenuBtn" text="Display Distribution" />
+                        <MenuItem fx:id="displayData" mnemonicParsing="false" onAction="#displayDataMenuBtn" text="Display Data" />
+                        <MenuItem fx:id="displayGraph" mnemonicParsing="false" onAction="#displayGraphMenuBtn" text="Display Graph" />
+                        <MenuItem fx:id="displayDist" mnemonicParsing="false" onAction="#displayDistMenuBtn" text="Display Distribution" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="User Guide" />
-                        <MenuItem mnemonicParsing="false" onAction="#errorLogMenuBtn" text="Error Log" />
+                        <MenuItem fx:id="userGuide" mnemonicParsing="false" onAction="#userGuide" text="User Guide" />
+                        <MenuItem fx:id="errorLog" mnemonicParsing="false" onAction="#errorLogMenuBtn" text="Error Log" />
                     </items>
                 </Menu>
             </menus>
