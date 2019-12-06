@@ -30,13 +30,25 @@ public class DisplayGraph {
 	@FXML NumberAxis xAxis;
 	@FXML CategoryAxis yAxis;
 	@FXML BarChart graph;
+
+	public static int set1 = 0;
+	public static int set2 = 0;
+	public static int set3 = 0;
+	public static int set4 = 0;
+	public static int set5 = 0;
+	public static int set6 = 0;
+	public static int set7 = 0;
+	public static int set8 = 0;
+	public static int set9 = 0;
+	public static int set10 = 0;
 	
 	public void initialize() throws Exception
 	{
-		setData(); 
+		setData();
+		createChart();
 	}
 	
-	public void setData()//splits the data into 10 sets (for each column)
+	public static void setData()//splits the data into 10 sets (for each column)
 	{	
 		if(min < 0)
 		{
@@ -45,16 +57,16 @@ public class DisplayGraph {
 				
 		int range = (int) (max - min);
 		
-		int set1 = 0; 
-		int set2 = 0; 
-		int set3 = 0; 
-		int set4 = 0; 
-		int set5 = 0; 
-		int set6 = 0; 
-		int set7 = 0; 
-		int set8 = 0; 
-		int set9 = 0; 
-		int set10 = 0; 
+		set1 = 0;
+		set2 = 0;
+		set3 = 0;
+		set4 = 0;
+		set5 = 0;
+		set6 = 0;
+		set7 = 0;
+		set8 = 0;
+		set9 = 0;
+		set10 = 0;
 		
 		int ninety = (int) (range * 0.90);
 		int eighty = (int) (range * 0.80);
@@ -109,29 +121,30 @@ public class DisplayGraph {
 				set10++; 
 			}
 		}
-		
-		
+
+	}
+
+	public void createChart() {
 		//for setting the xAxis and yAxis labels.
 		xAxis.setLabel("Occurrances");
-		yAxis.setLabel("Grades"); 
-		
-		
+		yAxis.setLabel("Grades");
+
+
 		XYChart.Series series1 = new XYChart.Series();
 		series1.setName("Data");
 
-	   series1.getData().add(new XYChart.Data(set1, "0 to 9%"));
-	   series1.getData().add(new XYChart.Data(set2, "10 to 19%"));
-	   series1.getData().add(new XYChart.Data(set3, "20 to 29%"));
-	   series1.getData().add(new XYChart.Data(set4, "30 to 39%"));
-	   series1.getData().add(new XYChart.Data(set5, "40 to 49%"));
-	   series1.getData().add(new XYChart.Data(set6, "50 to 59%"));
-	   series1.getData().add(new XYChart.Data(set7, "60 to 69%"));
-	   series1.getData().add(new XYChart.Data(set8, "70 to 79%"));
-	   series1.getData().add(new XYChart.Data(set9, "80 to 89%"));
-	   series1.getData().add(new XYChart.Data(set10, "90 to 100%"));
-	   
-	   graph.getData().addAll(series1);
+		series1.getData().add(new XYChart.Data(set1, "0 to 9%"));
+		series1.getData().add(new XYChart.Data(set2, "10 to 19%"));
+		series1.getData().add(new XYChart.Data(set3, "20 to 29%"));
+		series1.getData().add(new XYChart.Data(set4, "30 to 39%"));
+		series1.getData().add(new XYChart.Data(set5, "40 to 49%"));
+		series1.getData().add(new XYChart.Data(set6, "50 to 59%"));
+		series1.getData().add(new XYChart.Data(set7, "60 to 69%"));
+		series1.getData().add(new XYChart.Data(set8, "70 to 79%"));
+		series1.getData().add(new XYChart.Data(set9, "80 to 89%"));
+		series1.getData().add(new XYChart.Data(set10, "90 to 100%"));
 
+		graph.getData().addAll(series1);
 	}
 	
 	

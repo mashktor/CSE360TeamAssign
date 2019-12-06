@@ -10,10 +10,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 
+import javafx.scene.control.Label;
+import javafx.scene.control.MenuBar;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 
+import java.awt.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -38,13 +44,14 @@ public class DisplayData {
     @FXML   Label mean;
     @FXML   Label median;
     @FXML   Label mode;
-    public Label realName;
+    @FXML   Label realName;
 
     public void initialize() throws Exception {
         fillTable();
         fillAnalysis();
         realName.setText(id);
-        
+        teamAssign.DisplayGraph.setData();
+        teamAssign.DisplayDist.displayDISTData();
     }
 
 
@@ -152,6 +159,126 @@ public class DisplayData {
 
     }
 
+    public void exportReport() throws IOException {
+        DecimalFormat df = new DecimalFormat("###0.00");
+        String title = "Grade Analysis Report";
+        String name = realName.getText();
+        BufferedWriter writer = new BufferedWriter(new FileWriter("report.txt"));
+        writer.write(title);
+        writer.newLine();
+        writer.write("-------------------------------------------------------------");
+        writer.newLine();
+        writer.write("Name:   " + realName.getText() +
+                "    Boundary From:  " + teamAssign.NewDataSet.min +
+                "   To:  " + teamAssign.NewDataSet.max);
+        writer.newLine();
+        writer.write("-------------------------------------------------------------");
+        writer.newLine();
+        writer.write("Data Set Analysis:");
+        writer.newLine();
+        writer.newLine();
+        writer.write("Number of entries:  " + numOfEntries.getText());
+        writer.newLine();
+        writer.write("High Grade:         " + high.getText());
+        writer.newLine();
+        writer.write("Low Grade:          " + low.getText());
+        writer.newLine();
+        writer.write("Mean of Data Set:   " + mean.getText());
+        writer.newLine();
+        writer.write("Median of Data Set: " + median.getText());
+        writer.newLine();
+        writer.write("Mode of Data Set:   " + mode.getText());
+        writer.newLine();
+        writer.write("-------------------------------------------------------------");
+        writer.newLine();
+        writer.write("Grade Entries:");
+        writer.newLine();
+        int count = 0;
+        for(int index = 0; index < dataSet.size(); index++){
+            if(count / 5 == 1){
+                count = 0;
+                writer.newLine();
+            }
+            if(!(index == dataSet.size() - 1)) {
+                writer.write(dataSet.get(index) + ",  ");
+            }
+            else{
+                writer.write(dataSet.get(index) + "");
+            }
+            count++;
+        }
+        writer.newLine();
+        writer.write("-------------------------------------------------------------");
+        writer.newLine();
+        writer.write("Occurrences of grade per 10%:");
+        writer.newLine();
+        writer.write("0% - 9%   :   " + DisplayGraph.set1);
+        writer.newLine();
+        writer.write("10% - 19% :   " + DisplayGraph.set2);
+        writer.newLine();
+        writer.write("20% - 29% :   " + DisplayGraph.set3);
+        writer.newLine();
+        writer.write("30% - 39% :   " + DisplayGraph.set4);
+        writer.newLine();
+        writer.write("40% - 49% :   " + DisplayGraph.set5);
+        writer.newLine();
+        writer.write("50% - 59% :   " + DisplayGraph.set6);
+        writer.newLine();
+        writer.write("60% - 69% :   " + DisplayGraph.set7);
+        writer.newLine();
+        writer.write("70% - 79% :   " + DisplayGraph.set8);
+        writer.newLine();
+        writer.write("80% - 89% :   " + DisplayGraph.set9);
+        writer.newLine();
+        writer.write("90% - 100%:   " + DisplayGraph.set10);
+        writer.newLine();
+        writer.newLine();
+        writer.write("-------------------------------------------------------------");
+        writer.newLine();
+        writer.write("Average per interval of 10%:");
+        writer.newLine();
+        writer.write("0% - 9%   :   " + df.format(DisplayDist.average1));
+        writer.newLine();
+        writer.write("10% - 19% :   " + df.format(DisplayDist.average2));
+        writer.newLine();
+        writer.write("20% - 29% :   " + df.format(DisplayDist.average3));
+        writer.newLine();
+        writer.write("30% - 39% :   " + df.format(DisplayDist.average4));
+        writer.newLine();
+        writer.write("40% - 49% :   " + df.format(DisplayDist.average5));
+        writer.newLine();
+        writer.write("50% - 59% :   " + df.format(DisplayDist.average6));
+        writer.newLine();
+        writer.write("60% - 69% :   " + df.format(DisplayDist.average7));
+        writer.newLine();
+        writer.write("70% - 79% :   " + df.format(DisplayDist.average8));
+        writer.newLine();
+        writer.write("80% - 89% :   " + df.format(DisplayDist.average9));
+        writer.newLine();
+        writer.write("90% - 100%:   " + df.format(DisplayDist.average10));
+        writer.newLine();
+        writer.newLine();
+        writer.write("-------------------------------------------------------------");
+
+
+        writer.close();
+
+        //text file, should be opening in default text editor
+        String path = System.getProperty("user.dir")+"\\src\\report.txt";
+        File file = new File("report.txt");
+
+        //first check if Desktop is supported by Platform or not
+        if(!Desktop.isDesktopSupported()){
+            System.out.println("Desktop is not supported");
+            return;
+        }
+
+        Desktop desktop = Desktop.getDesktop();
+        desktop.open(file);
+
+    }
+
+
     @FXML
     MenuBar myMenuBar;
 
@@ -253,6 +380,12 @@ public class DisplayData {
         stage.setScene(scene);
         stage.showAndWait();
     };
+
+    @FXML
+    protected void exportReportBtn(javafx.event.ActionEvent actionEvent) throws IOException {
+        exportReport();
+    }
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////

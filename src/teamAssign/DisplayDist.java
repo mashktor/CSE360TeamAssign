@@ -28,12 +28,16 @@ public class DisplayDist {
 	@FXML CategoryAxis yAxis;
 	@FXML BarChart graph;
 
+	public static float average1, average2, average3, average4, average5,
+						average6, average7, average8, average9, average10;
+
 	public void initialize()
 	{
 		displayDISTData();
+		createDistGraph();
 	}
 	
-	public void displayDISTData()
+	public static void displayDISTData()
 	{
 		if(min < 0)
 		{
@@ -131,45 +135,49 @@ public class DisplayDist {
 
 
 		if(set1 == 0) set1 = 1;
-		float average1 = (sum1/set1) % 10;
+		 average1 = (sum1/set1) % 10;
 		if(set2 == 0) set2 = 1;
-		float average2 = (sum2/set2) % 10;
+		 average2 = (sum2/set2) % 10;
 		if(set3 == 0) set3 = 1;
-		float average3 = (sum3/set3) % 10;
+		 average3 = (sum3/set3) % 10;
 		if(set4 == 0) set4 = 1;
-		float average4 = (sum4/set4) % 10;
+		 average4 = (sum4/set4) % 10;
 		if(set5 == 0) set5 = 1;
-		float average5 = (sum5/set5) % 10;
+		 average5 = (sum5/set5) % 10;
 		if(set6 == 0) set6 = 1;
-		float average6 = (sum6/set6) % 10;
+		 average6 = (sum6/set6) % 10;
 		if(set7 == 0) set7 = 1;
-		float average7 = (sum7/set7) % 10;
+		 average7 = (sum7/set7) % 10;
 		if(set8 == 0) set8 = 1;
-		float average8 = (sum8/set8) % 10;
+		 average8 = (sum8/set8) % 10;
 		if(set9 == 0) set9 = 1;
-		float average9 = (sum9/set9) % 10;
+		 average9 = (sum9/set9) % 10;
 		if(set10 == 0) set10 = 1;
-		float average10 = (sum10/set10) % 10;
+		 average10 = (sum10/set10) % 10;
 
-		
+
+
+	}
+
+	public void createDistGraph() {
 		xAxis.setLabel("Average Distribution (10% range)");
-		yAxis.setLabel("10 percent Intervals"); 
-		
+		yAxis.setLabel("10 percent Intervals");
+
 		XYChart.Series series2 = new XYChart.Series();
 		series2.setName("Data");
 
-	   series2.getData().add(new XYChart.Data(average1, "0 to 9%"));
-	   series2.getData().add(new XYChart.Data(average2, "10 to 19%"));
-	   series2.getData().add(new XYChart.Data(average3, "20 to 29%"));
-	   series2.getData().add(new XYChart.Data(average4, "30 to 39%"));
-	   series2.getData().add(new XYChart.Data(average5, "40 to 49%"));
-	   series2.getData().add(new XYChart.Data(average6, "50 to 59%"));
-	   series2.getData().add(new XYChart.Data(average7, "60 to 69%"));
-	   series2.getData().add(new XYChart.Data(average8, "70 to 79%"));
-	   series2.getData().add(new XYChart.Data(average9, "80 to 89%"));
-	   series2.getData().add(new XYChart.Data(average10, "90 to 100%"));
-	   
-	   graph.getData().addAll(series2);
+		series2.getData().add(new XYChart.Data(average1, "0 to 9%"));
+		series2.getData().add(new XYChart.Data(average2, "10 to 19%"));
+		series2.getData().add(new XYChart.Data(average3, "20 to 29%"));
+		series2.getData().add(new XYChart.Data(average4, "30 to 39%"));
+		series2.getData().add(new XYChart.Data(average5, "40 to 49%"));
+		series2.getData().add(new XYChart.Data(average6, "50 to 59%"));
+		series2.getData().add(new XYChart.Data(average7, "60 to 69%"));
+		series2.getData().add(new XYChart.Data(average8, "70 to 79%"));
+		series2.getData().add(new XYChart.Data(average9, "80 to 89%"));
+		series2.getData().add(new XYChart.Data(average10, "90 to 100%"));
+
+		graph.getData().addAll(series2);
 	}
 	
     @FXML
