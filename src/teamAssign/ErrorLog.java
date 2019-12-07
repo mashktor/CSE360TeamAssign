@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.Button;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.control.TextArea;
@@ -29,6 +30,7 @@ public class ErrorLog extends Main {
     @FXML MenuItem displayDist;
     @FXML MenuItem appendData;
     @FXML MenuItem addSingle;
+    @FXML Button displayDataBtn;
     @FXML MenuItem deleteSingle;
     @FXML TextArea errorArea;
     @FXML
@@ -41,6 +43,7 @@ public class ErrorLog extends Main {
             appendData.setDisable(true);
             addSingle.setDisable(true);
             deleteSingle.setDisable(true);
+            displayDataBtn.setDisable(true);
         }
     }
     
@@ -184,6 +187,20 @@ public class ErrorLog extends Main {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    @FXML
+    public void displayData(javafx.event.ActionEvent actionEvent) throws IOException {
+    	Parent newDisplayDataParent = FXMLLoader.load(getClass().getResource("DisplayData.fxml"));
+        Scene newDisplayDataScene = new Scene(newDisplayDataParent);
+        
+     // This line gets the stage information
+        Stage window  = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+
+        window.setScene(newDisplayDataScene);
+        window.show();
+    }
+    
+    
+    
     @FXML
     public void newDataSetBtnClk(javafx.event.ActionEvent actionEvent) throws IOException {
         Parent newDataSetParent = FXMLLoader.load(getClass().getResource("NewDataSet.fxml"));
