@@ -26,9 +26,10 @@
             </font>
         </Label>
         <TextField fx:id="input" layoutX="134.0" layoutY="80.0" prefHeight="25.0" prefWidth="95.0" />
+        <Label fx:id="entryNotValid" layoutX="54.0" layoutY="120.0" textFill="RED" />
         <Button layoutX="54.0" layoutY="140.0" mnemonicParsing="false" onAction="#populateTable" text="Populate Table" />
         <ListView fx:id="view" editable="true" layoutX="251.0" layoutY="36.0" prefHeight="200.0" prefWidth="200.0" />
-        <Label layoutX="153.0" layoutY="248.0" text="Selecet item to be deleted from table">
+        <Label layoutX="153.0" layoutY="248.0" text="Select an item to be deleted from table">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>

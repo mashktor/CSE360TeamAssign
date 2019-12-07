@@ -16,6 +16,7 @@ import javafx.scene.control.MenuBar;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import static javafx.application.Platform.exit;
 import static teamAssign.Main.dataSet;
 import static teamAssign.NewDataSet.*;
 
@@ -252,6 +253,12 @@ public class DisplayGraph {
 		File userMan = new File("UserDocument.pdf");
 		Desktop.getDesktop().open(userMan);
 	}
+
+	@FXML
+	protected void closeMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
+		exit();
+	}
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////

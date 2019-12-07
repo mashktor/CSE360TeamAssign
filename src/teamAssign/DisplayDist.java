@@ -14,6 +14,7 @@ import javafx.scene.control.MenuBar;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import static javafx.application.Platform.exit;
 import static teamAssign.Main.dataSet;
 import static teamAssign.NewDataSet.max;
 import static teamAssign.NewDataSet.min;
@@ -285,6 +286,12 @@ public class DisplayDist {
         stage.setScene(scene);
         stage.showAndWait();
     };
+
+	@FXML
+	protected void closeMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
+		exit();
+	}
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////

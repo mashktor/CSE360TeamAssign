@@ -14,9 +14,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
-
-
-
+import static javafx.application.Platform.exit;
 
 
 public class MainPage extends Main{
@@ -195,6 +193,12 @@ public class MainPage extends Main{
     protected void userGuide(javafx.event.ActionEvent actionEvent) throws IOException{
         File userMan = new File("UserDocument.pdf");
         Desktop.getDesktop().open(userMan);
+    }
+
+
+    @FXML
+    protected void closeMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
+        exit();
     }
 
 

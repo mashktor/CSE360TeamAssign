@@ -16,6 +16,7 @@ import java.awt.*;
 import java.io.*;
 import java.util.*;
 
+import static javafx.application.Platform.exit;
 
 
 public class ErrorLog extends Main {
@@ -183,6 +184,12 @@ public class ErrorLog extends Main {
         File userMan = new File("UserDocument.pdf");
         Desktop.getDesktop().open(userMan);
     }
+
+    @FXML
+    protected void closeMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
+        exit();
+    }
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////

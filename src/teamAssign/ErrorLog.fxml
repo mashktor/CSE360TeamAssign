@@ -22,7 +22,7 @@
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#onLoadFileMenuBtn" text="Load File" />
                         <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem mnemonicParsing="false" onAction="#closeMenuBtn" text="Close" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
@@ -83,7 +83,7 @@
     <bottom>
         <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
             <children>
-            	<Button fx:id = "displayDataBtn" mnemonicParsing="false" onAction="#displayData" text="Display Data">
+            	<Button fx:id="displayDataBtn" mnemonicParsing="false" onAction="#displayData" text="Display Data">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>

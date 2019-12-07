@@ -29,6 +29,7 @@ import java.util.List;
 import java.util.Optional;
 
 
+import static javafx.application.Platform.exit;
 import static teamAssign.Main.dataSet;
 import static teamAssign.Main.success;
 import static teamAssign.NewDataSet.*;
@@ -401,6 +402,12 @@ public class DisplayData {
         File userMan = new File("UserDocument.pdf");
         Desktop.getDesktop().open(userMan);
     }
+
+    @FXML
+    protected void closeMenuBtn(javafx.event.ActionEvent actionEvent) throws IOException {
+        exit();
+    }
+
 
 
 
