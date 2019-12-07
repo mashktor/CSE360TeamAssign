@@ -271,7 +271,8 @@ public class DisplayDist {
 
 	@FXML
 	protected void userGuideBtn(javafx.event.ActionEvent actionEvent) throws IOException  {
-		File userMan = new File("UserDocument.pdf");
+		String path = System.getProperty("user.dir")+"\\src\\teamAssign\\files\\UserDocument.pdf";
+		File userMan = new File(path);
 		Desktop.getDesktop().open(userMan);
 	}
 
